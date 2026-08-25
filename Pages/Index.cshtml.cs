@@ -30,14 +30,16 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
             "Senior High School",
             "2021 – 2023",
             "Mantalongon National High School, Dalaguete, Cebu",
-            "/images/education/mantalongon-computer-lab.jpg",
-            "Computer laboratory at Mantalongon National High School"),
+            "/images/education/mantalongon-logo.jpg",
+            "Mantalongon National High School seal",
+            true),
         new(
             "Technology Scholarship Program",
             "Class of 2026",
             "Passerelles Numériques Philippines",
-            "/images/education/pn-philippines-graduates.png",
-            "Passerelles Numériques Philippines graduates")
+            "/images/education/pn-logo.png",
+            "Passerelles Numériques logo",
+            true)
     ];
 
     public IReadOnlyList<SkillGroup> TechStack { get; } =
