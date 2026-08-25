@@ -21,6 +21,7 @@ builder.Services.AddHttpClient<PortfolioWeb.Services.IDailyQuoteService, Portfol
 });
 
 var app = builder.Build();
+string portfolioRelease = Environment.GetEnvironmentVariable("PORTFOLIO_RELEASE") ?? "local";
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -37,6 +38,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+app.MapGet("/version", () => Results.Ok(new { version = portfolioRelease }));
 app.MapRazorPages();
 
 app.Run();

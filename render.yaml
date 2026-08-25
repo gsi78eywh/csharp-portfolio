@@ -8,3 +8,6 @@ services:
     branch: main
     autoDeployTrigger: commit
     healthCheckPath: /health
+    envVars:
+      - key: PORTFOLIO_RELEASE
+        value: "2026.08.25-project-refresh"
