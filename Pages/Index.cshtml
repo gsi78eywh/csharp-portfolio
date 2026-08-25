@@ -1,32 +1,37 @@
-﻿@page
+@page
 @model IndexModel
 @{
-    ViewData["Title"] = "C# Web Developer Portfolio";
+    ViewData["Title"] = "Junior Frontend Developer & UI/UX Enthusiast";
 }
 
 <section class="hero section-shell" aria-labelledby="hero-title">
     <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> @Model.Role · Available for junior opportunities</p>
+        <p class="eyebrow"><span></span> Open to internships, freelance &amp; full-time roles</p>
+        <p class="hero-location">@Model.Location</p>
         <h1 id="hero-title">
-            Hi, I'm <span>@Model.Name.</span><br />
-            I build useful things for the web.
+            Seth Andrey<br />
+            <span>Jabagat.</span>
         </h1>
+        <p class="hero-role">@Model.Role</p>
         <p class="hero-summary">
-            I'm an aspiring C# developer learning to turn ideas into clean, dependable web applications
-            with .NET and ASP.NET Core.
+            I design thoughtful interfaces and build responsive digital experiences that balance
+            usability, clarity, and purposeful technology.
         </p>
         <div class="hero-actions">
-            <a class="button button-primary" href="#projects">View my work <span aria-hidden="true">→</span></a>
-            <a class="button button-secondary" href="#contact">Contact me</a>
+            <a class="button button-primary" href="https://teams.microsoft.com/" target="_blank" rel="noreferrer">
+                Schedule a call <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-secondary" href="mailto:sethandreyabrasado@gmail.com">Email me</a>
+            <a class="text-link" asp-page="/Resume">View résumé <span aria-hidden="true">→</span></a>
         </div>
-        <ul class="hero-meta" aria-label="Quick information">
-            <li><strong>Based in</strong><span>Philippines</span></li>
-            <li><strong>Focused on</strong><span>C# &amp; web development</span></li>
-            <li><strong>Status</strong><span>Learning &amp; building</span></li>
+        <ul class="hero-meta" aria-label="Professional summary">
+            <li><strong>Education</strong><span>Computer Technology</span></li>
+            <li><strong>Focus</strong><span>Frontend &amp; UI/UX</span></li>
+            <li><strong>Approach</strong><span>Human-centered</span></li>
         </ul>
     </div>
 
-    <div class="hero-visual reveal" aria-label="C# developer code sample">
+    <div class="hero-visual reveal" aria-label="Developer profile visual">
         <div class="portrait-card">
             <div class="portrait-grid"></div>
             <div class="initials" aria-hidden="true">SJ</div>
@@ -35,40 +40,80 @@
             <div class="status-card">
                 <span class="status-dot"></span>
                 <div>
-                    <small>Current focus</small>
-                    <strong>ASP.NET Core</strong>
+                    <small>Current status</small>
+                    <strong>Available to collaborate</strong>
                 </div>
             </div>
         </div>
         <div class="code-window" aria-hidden="true">
-            <div class="window-bar"><i></i><i></i><i></i><span>Developer.cs</span></div>
-            <pre><code><em>public class</em> Developer
-{
-    <b>string</b> Name = "Seth";
-    <b>string</b> Language = "C#";
-    <b>bool</b> KeepsLearning = <mark>true</mark>;
-}</code></pre>
+            <div class="window-bar"><i></i><i></i><i></i><span>seth.profile</span></div>
+            <pre><code><em>const</em> developer = {
+  location: <b>"Cebu, PH"</b>,
+  craft: [<b>"Frontend"</b>, <b>"UI/UX"</b>],
+  learning: <mark>true</mark>
+};</code></pre>
         </div>
     </div>
 </section>
 
+<div class="discipline-strip" aria-label="Professional disciplines">
+    <div>
+        <span>Frontend Development</span><i>✦</i>
+        <span>UI/UX Design</span><i>✦</i>
+        <span>Responsive Web</span><i>✦</i>
+        <span>Software Development</span><i>✦</i>
+        <span>Accessibility</span>
+    </div>
+</div>
+
 <section class="about section-shell section-block" id="about" aria-labelledby="about-title">
     <div class="section-heading reveal">
-        <p class="section-number">01 / About</p>
-        <h2 id="about-title">Curious by nature.<br />Consistent by choice.</h2>
+        <p class="section-number">01 / About me</p>
+        <h2 id="about-title">Designing with empathy.<br />Building with purpose.</h2>
     </div>
     <div class="about-content reveal">
         <p class="lead">
-            I'm building a strong foundation in software development through hands-on C# projects.
-            I enjoy breaking down problems, learning how systems work, and improving my code one project at a time.
+            Hi, I'm Seth — a Computer Technology student from Dalaguete, Cebu specializing in software
+            development, UI/UX design, and responsive web solutions.
         </p>
         <p>
-            My current goal is to grow into a professional .NET developer. This portfolio is part of that journey:
-            a real web application built with C#, Razor Pages, semantic HTML, and responsive CSS.
+            I focus on building user-centered applications, creating intuitive interfaces, and delivering
+            digital experiences that make technology easier to understand and use. Adaptable, detail-oriented,
+            and collaborative, I enjoy solving problems with creativity and technical clarity.
+        </p>
+        <p>
+            My academic projects have strengthened my ability to design responsive systems, improve accessibility,
+            and apply modern development practices to real scenarios. I'm ready to contribute, keep learning,
+            and support teams turning useful ideas into working products.
         </p>
         <div class="learning-note">
             <span aria-hidden="true">↗</span>
-            <p><strong>Right now I'm learning</strong> object-oriented programming, web APIs, databases, and clean code practices.</p>
+            <p><strong>What I bring</strong> Curiosity, thoughtful visual decisions, reliable collaboration, and the discipline to keep improving.</p>
+        </div>
+    </div>
+</section>
+
+<section class="education section-block" id="education" aria-labelledby="education-title">
+    <div class="section-shell">
+        <div class="section-heading horizontal reveal">
+            <div>
+                <p class="section-number">02 / Education</p>
+                <h2 id="education-title">Where I'm learning.</h2>
+            </div>
+            <p>A technology-focused academic foundation supported by practical projects and continuous self-learning.</p>
+        </div>
+
+        <div class="education-grid">
+            @for (var index = 0; index < Model.Education.Count; index++)
+            {
+                var education = Model.Education[index];
+                <article class="education-card reveal">
+                    <span class="card-index">@((index + 1).ToString("00"))</span>
+                    <p>@education.Period</p>
+                    <h3>@education.Program</h3>
+                    <span>@education.School</span>
+                </article>
+            }
         </div>
     </div>
 </section>
@@ -77,21 +122,42 @@
     <div class="section-shell">
         <div class="section-heading horizontal reveal">
             <div>
-                <p class="section-number">02 / Skills</p>
-                <h2 id="skills-title">My growing toolkit.</h2>
+                <p class="section-number">03 / Tech stack</p>
+                <h2 id="skills-title">Tools I create with.</h2>
             </div>
-            <p>Technologies I use today—and keep improving through practice.</p>
+            <p>A growing set of frontend, backend, database, and developer tools shaped through hands-on practice.</p>
         </div>
 
-        <div class="skill-grid reveal">
-            @for (var index = 0; index < Model.CoreSkills.Count; index++)
+        <div class="stack-grid">
+            @for (var index = 0; index < Model.TechStack.Count; index++)
             {
-                <article class="skill-card">
-                    <span>@((index + 1).ToString("00"))</span>
-                    <h3>@Model.CoreSkills[index]</h3>
-                    <div class="skill-line"><i style="--skill-level: @(72 + (index % 3 * 8))%"></i></div>
+                var group = Model.TechStack[index];
+                <article class="stack-card reveal">
+                    <div class="stack-card-heading">
+                        <span>@((index + 1).ToString("00"))</span>
+                        <h3>@group.Category</h3>
+                    </div>
+                    <ul>
+                        @foreach (string skill in group.Skills)
+                        {
+                            <li>@skill</li>
+                        }
+                    </ul>
                 </article>
             }
+        </div>
+
+        <div class="certifications reveal" aria-labelledby="certifications-title">
+            <div>
+                <p class="section-number">Certifications &amp; training</p>
+                <h3 id="certifications-title">Learning beyond the classroom.</h3>
+            </div>
+            <ol>
+                @for (var index = 0; index < Model.Certifications.Count; index++)
+                {
+                    <li><span>@((index + 1).ToString("00"))</span>@Model.Certifications[index]</li>
+                }
+            </ol>
         </div>
     </div>
 </section>
@@ -99,10 +165,10 @@
 <section class="projects section-shell section-block" id="projects" aria-labelledby="projects-title">
     <div class="section-heading horizontal reveal">
         <div>
-            <p class="section-number">03 / Projects</p>
-            <h2 id="projects-title">Things I've built.</h2>
+            <p class="section-number">04 / Selected projects</p>
+            <h2 id="projects-title">Work built to be useful.</h2>
         </div>
-        <p>Small projects, built deliberately, that document my progress as a developer.</p>
+        <p>Academic projects where interface decisions, programming fundamentals, and practical outcomes come together.</p>
     </div>
 
     <div class="project-list">
@@ -113,11 +179,14 @@
                 <div class="project-index">@((index + 1).ToString("00"))</div>
                 <div class="project-body">
                     <div class="project-topline">
-                        <h3>@project.Title</h3>
+                        <div>
+                            <p class="project-period">@project.Period</p>
+                            <h3>@project.Title</h3>
+                        </div>
                         <span>@project.Status</span>
                     </div>
                     <p>@project.Description</p>
-                    <ul aria-label="Technologies used for @project.Title">
+                    <ul aria-label="Key areas for @project.Title">
                         @foreach (string technology in project.Technologies)
                         {
                             <li>@technology</li>
@@ -130,15 +199,72 @@
     </div>
 </section>
 
+<section class="experience section-block" id="experience" aria-labelledby="experience-title">
+    <div class="section-shell experience-layout">
+        <div class="section-heading reveal">
+            <p class="section-number">05 / Experience</p>
+            <h2 id="experience-title">Growing through participation.</h2>
+            <p>Community programs, industry talks, and collaborative development experiences that expand my perspective.</p>
+        </div>
+
+        <div class="timeline">
+            @foreach (var experience in Model.Experience)
+            {
+                <article class="timeline-item reveal">
+                    <span class="timeline-dot"></span>
+                    <p>@experience.Period</p>
+                    <h3>@experience.Role</h3>
+                    <span>@experience.Description</span>
+                </article>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="motivation section-shell section-block" aria-labelledby="motivation-title">
+    <div class="quote-card reveal">
+        <div class="quote-label">
+            <p class="section-number" id="motivation-title">Daily motivation</p>
+            <span>Updated every day</span>
+        </div>
+        <blockquote>
+            <p>“@Model.Quote.Text”</p>
+            <footer>— @Model.Quote.Author</footer>
+        </blockquote>
+        @if (Model.Quote.IsFromApi)
+        {
+            <a class="quote-credit" href="https://zenquotes.io/" target="_blank" rel="noreferrer">Inspirational quote provided by ZenQuotes API</a>
+        }
+        else
+        {
+            <span class="quote-credit">Showing a saved quote while the daily service reconnects.</span>
+        }
+    </div>
+</section>
+
 <section class="contact section-block" id="contact" aria-labelledby="contact-title">
     <div class="contact-inner section-shell reveal">
-        <p class="section-number">04 / Contact</p>
-        <h2 id="contact-title">Let's build something<br /><span>worth sharing.</span></h2>
-        <p>I'm open to learning opportunities, junior roles, internships, and conversations with other developers.</p>
-        <a class="button button-light" href="mailto:sethandreyabrasado@gmail.com">sethandreyabrasado@gmail.com <span aria-hidden="true">↗</span></a>
-        <div class="social-links" aria-label="Social links">
+        <p class="section-number">06 / Reach out</p>
+        <h2 id="contact-title">Have an idea?<br /><span>Let's make it real.</span></h2>
+        <p>
+            I'm open to internships, freelance projects, full-time opportunities, and conversations with people
+            building meaningful digital products.
+        </p>
+        <div class="contact-actions">
+            <a class="button button-light" href="mailto:sethandreyabrasado@gmail.com">
+                Email me <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-outline-light" href="https://teams.microsoft.com/" target="_blank" rel="noreferrer">Schedule a call</a>
+        </div>
+        <div class="social-links" aria-label="Social profiles">
             <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="mailto:sethandreyabrasado@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/seth-andrey-abrasado-868419366/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.facebook.com/profile.php?id=61582551204852" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://instagram.com/uj2uw3.xx" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <div class="community-note">
+            <strong>Community matters.</strong>
+            <span>I value developer forums, open-source contributions, and learning alongside peers.</span>
         </div>
     </div>
 </section>

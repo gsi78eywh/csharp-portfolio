@@ -1,34 +1,51 @@
-# Seth's ASP.NET Core Portfolio
+# Seth Andrey Jabagat — Developer Portfolio
 
-A responsive developer portfolio built with C#, ASP.NET Core 8, and Razor Pages.
+A responsive portfolio and printable résumé built with C#, ASP.NET Core 8, and Razor Pages.
+
+## Highlights
+
+- Profile, education, tech stack, certifications, projects, and experience
+- Responsive desktop and mobile design
+- Print-friendly résumé page at `/Resume`
+- Server-side daily motivation from the ZenQuotes API
+- Daily in-memory quote caching with a reliable built-in fallback
+- Docker and Render deployment configuration
+- Lightweight health endpoint at `/health`
 
 ## Run locally
-
-From the `PortfolioWeb` folder:
 
 ```powershell
 dotnet run --launch-profile http
 ```
 
-Open <http://localhost:5247> in a browser. Stop the server with `Ctrl+C`.
+Open <http://localhost:5247>. Stop the server with `Ctrl+C`.
 
-## Personalize before publishing
+## Deploy to Render
 
-- Update your introduction and location in `Pages/Index.cshtml`.
-- Update skills and project information in `Pages/Index.cshtml.cs`.
-- Review the email and GitHub URL in `Pages/Index.cshtml`.
-- Replace the `SJ` initials with a real photo later if you want one.
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/gsi78eywh/csharp-portfolio)
+
+The included `render.yaml` creates a free Docker web service in Render's Singapore region. The service checks `/health` and automatically deploys new commits from `main`.
+
+Free Render services can spin down during periods without traffic, so the first request after inactivity can take longer.
 
 ## Important files
 
 ```text
 PortfolioWeb/
-|-- Program.cs                      ASP.NET Core application setup
-|-- Models/PortfolioProject.cs      C# project data type
-|-- Pages/Index.cshtml              Portfolio page markup
-|-- Pages/Index.cshtml.cs           C# portfolio content
-|-- Pages/Shared/_Layout.cshtml     Navigation and page layout
-`-- wwwroot/
-    |-- css/site.css                Responsive visual design
-    `-- js/site.js                  Menu and scroll effects
+|-- Program.cs                            Application and deployment setup
+|-- Models/                               C# portfolio data records
+|-- Services/ZenQuotesDailyQuoteService.cs Daily quote API integration
+|-- Pages/Index.cshtml                    Main portfolio page
+|-- Pages/Index.cshtml.cs                 Portfolio content model
+|-- Pages/Resume.cshtml                   Printable résumé
+|-- Pages/Shared/_Layout.cshtml           Navigation and shared layout
+|-- wwwroot/css/                          Portfolio and résumé styling
+|-- Dockerfile                            Production container image
+`-- render.yaml                           Render deployment blueprint
 ```
+
+## Update the portfolio
+
+- Edit biography and links in `Pages/Index.cshtml`.
+- Edit education, stack, certifications, projects, and experience in `Pages/Index.cshtml.cs`.
+- Keep the résumé synchronized in `Pages/Resume.cshtml`.
