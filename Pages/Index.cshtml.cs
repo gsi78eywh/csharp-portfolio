@@ -22,11 +22,22 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
         new(
             "Associate in Computer Technology",
             "2024 – 2026",
-            "University of San Jose – Recoletos"),
+            "University of San Jose – Recoletos",
+            "/images/education/usjr-logo.png",
+            "University of San Jose – Recoletos seal",
+            true),
         new(
             "Senior High School",
             "2021 – 2023",
-            "Mantalongon National High School, Dalaguete, Cebu")
+            "Mantalongon National High School, Dalaguete, Cebu",
+            "/images/education/mantalongon-computer-lab.jpg",
+            "Computer laboratory at Mantalongon National High School"),
+        new(
+            "Technology Scholarship Program",
+            "Class of 2026",
+            "Passerelles Numériques Philippines",
+            "/images/education/pn-philippines-graduates.png",
+            "Passerelles Numériques Philippines graduates")
     ];
 
     public IReadOnlyList<SkillGroup> TechStack { get; } =

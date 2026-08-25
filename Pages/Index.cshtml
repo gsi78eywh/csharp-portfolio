@@ -6,7 +6,7 @@
 
 <section class="hero section-shell" aria-labelledby="hero-title">
     <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> Open to Microsoft-focused development opportunities</p>
+        <p class="eyebrow"><span></span><strong>Open to Microsoft-focused development opportunities</strong></p>
         <p class="hero-location">@Model.Location</p>
         <h1 id="hero-title">
             Seth Andrey<br />
@@ -103,7 +103,7 @@
                 <p class="section-number">02 / Learning foundation</p>
                 <h2 id="education-title">Education that supports the work.</h2>
             </div>
-            <p>A technology-focused academic foundation supported by practical projects and continuous self-learning.</p>
+            <p>Academic training and scholarship support that strengthen my technical foundation, professional growth, and commitment to useful solutions.</p>
         </div>
 
         <div class="education-grid">
@@ -111,10 +111,19 @@
             {
                 var education = Model.Education[index];
                 <article class="education-card reveal">
-                    <span class="card-index">@((index + 1).ToString("00"))</span>
-                    <p>@education.Period</p>
-                    <h3>@education.Program</h3>
-                    <span>@education.School</span>
+                    <div class="education-card-media">
+                        <img class="education-card-image @(education.UseContainedImage ? "education-card-image--contain" : null)"
+                             src="@education.ImagePath"
+                             alt="@education.ImageAlt"
+                             loading="lazy"
+                             decoding="async" />
+                        <span class="card-index">@((index + 1).ToString("00"))</span>
+                    </div>
+                    <div class="education-card-content">
+                        <p>@education.Period</p>
+                        <h3>@education.Program</h3>
+                        <span>@education.School</span>
+                    </div>
                 </article>
             }
         </div>

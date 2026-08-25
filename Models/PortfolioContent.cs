@@ -3,7 +3,10 @@ namespace PortfolioWeb.Models;
 public sealed record EducationItem(
     string Program,
     string Period,
-    string School);
+    string School,
+    string ImagePath,
+    string ImageAlt,
+    bool UseContainedImage = false);
 
 public sealed record SkillGroup(
     string Category,
