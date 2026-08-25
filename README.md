@@ -2,6 +2,10 @@
 
 A responsive portfolio and printable résumé built with C#, ASP.NET Core 8, and Razor Pages.
 
+## Documentation
+
+Read the [complete project documentation](DOCUMENTATION.md) for the architecture, request lifecycle, responsive design system, content editing guide, résumé standards, API integration, deployment process, troubleshooting, and learning exercises.
+
 ## Highlights
 
 - Profile, education, tech stack, certifications, and academic, company, and community-focused projects
