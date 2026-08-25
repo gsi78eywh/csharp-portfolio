@@ -6,28 +6,31 @@
 
 <section class="hero section-shell" aria-labelledby="hero-title">
     <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> Open to internships, freelance &amp; full-time roles</p>
+        <p class="eyebrow"><span></span> Open to Microsoft-focused development opportunities</p>
         <p class="hero-location">@Model.Location</p>
         <h1 id="hero-title">
             Seth Andrey<br />
             <span>Jabagat.</span>
+            <span class="owner-badge" role="img" aria-label="Portfolio owner badge" title="Portfolio owner">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 12.5 3.1 3.1L17.5 8" /></svg>
+            </span>
         </h1>
         <p class="hero-role">@Model.Role</p>
         <p class="hero-summary">
-            I design thoughtful interfaces and build responsive digital experiences that balance
-            usability, clarity, and purposeful technology.
+            I build clear, practical digital solutions with Microsoft Power Platform, responsive web
+            technologies, and user-centered design&mdash;from workflow automation to community-focused systems.
         </p>
         <div class="hero-actions">
-            <a class="button button-primary" href="https://teams.microsoft.com/" target="_blank" rel="noreferrer">
-                Schedule a call <span aria-hidden="true">↗</span>
+            <a class="button button-primary" href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer">
+                Chat on Microsoft Teams <span aria-hidden="true">↗</span>
             </a>
-            <a class="button button-secondary" href="mailto:sethandreyabrasado@gmail.com">Email me</a>
+            <a class="button button-secondary" href="mailto:sethandreyabrasado@gmail.com">Send an email</a>
             <a class="text-link" asp-page="/Resume">View résumé <span aria-hidden="true">→</span></a>
         </div>
         <ul class="hero-meta" aria-label="Professional summary">
-            <li><strong>Education</strong><span>Computer Technology</span></li>
-            <li><strong>Focus</strong><span>Frontend &amp; UI/UX</span></li>
-            <li><strong>Approach</strong><span>Human-centered</span></li>
+            <li><strong>Core platform</strong><span>Microsoft Power Platform</span></li>
+            <li><strong>Build focus</strong><span>Business &amp; community solutions</span></li>
+            <li><strong>Delivery</strong><span>Web &middot; Cloud &middot; Automation</span></li>
         </ul>
     </div>
 
@@ -41,7 +44,7 @@
                 <span class="status-dot"></span>
                 <div>
                     <small>Current status</small>
-                    <strong>Available to collaborate</strong>
+                    <strong>Open to opportunities</strong>
                 </div>
             </div>
         </div>
@@ -58,18 +61,18 @@
 
 <div class="discipline-strip" aria-label="Professional disciplines">
     <div>
-        <span>Frontend Development</span><i>✦</i>
+        <span>Microsoft Power Platform</span><i>✦</i>
         <span>UI/UX Design</span><i>✦</i>
-        <span>Responsive Web</span><i>✦</i>
-        <span>Software Development</span><i>✦</i>
-        <span>Accessibility</span>
+        <span>Workflow Automation</span><i>✦</i>
+        <span>ASP.NET Core</span><i>✦</i>
+        <span>Cloud Deployment</span>
     </div>
 </div>
 
 <section class="about section-shell section-block" id="about" aria-labelledby="about-title">
     <div class="section-heading reveal">
-        <p class="section-number">01 / About me</p>
-        <h2 id="about-title">Designing with empathy.<br />Building with purpose.</h2>
+        <p class="section-number">01 / Professional profile</p>
+        <h2 id="about-title">Practical solutions.<br />Clear experiences.</h2>
     </div>
     <div class="about-content reveal">
         <p class="lead">
@@ -77,14 +80,14 @@
             development, Microsoft Power Platform solutions, UI/UX design, and responsive web experiences.
         </p>
         <p>
-            I focus on building user-centered applications, automating practical workflows, creating intuitive
-            interfaces, and delivering digital experiences that make technology easier to understand and use. Adaptable, detail-oriented,
-            and collaborative, I enjoy solving problems with creativity and technical clarity.
+            I focus on building user-centered applications, automating practical workflows, and creating intuitive
+            interfaces that make technology easier to understand and use. I bring an adaptable, detail-oriented,
+            and collaborative approach to every project.
         </p>
         <p>
-            My academic projects have strengthened my ability to design responsive systems, improve accessibility,
-            and apply modern development practices to real scenarios. I'm ready to contribute, keep learning,
-            and support teams turning useful ideas into working products.
+            Through academic, company, and community projects, I have designed responsive systems, Power Platform
+            workflows, reporting tools, and communication-focused solutions. I am ready to contribute within the
+            Microsoft ecosystem while continuing to grow across cloud, web, and automation technologies.
         </p>
         <div class="learning-note">
             <span aria-hidden="true">↗</span>
@@ -97,8 +100,8 @@
     <div class="section-shell">
         <div class="section-heading horizontal reveal">
             <div>
-                <p class="section-number">02 / Education</p>
-                <h2 id="education-title">Where I'm learning.</h2>
+                <p class="section-number">02 / Learning foundation</p>
+                <h2 id="education-title">Education that supports the work.</h2>
             </div>
             <p>A technology-focused academic foundation supported by practical projects and continuous self-learning.</p>
         </div>
@@ -122,10 +125,10 @@
     <div class="section-shell">
         <div class="section-heading horizontal reveal">
             <div>
-                <p class="section-number">03 / Tech stack</p>
-                <h2 id="skills-title">Tools I create with.</h2>
+                <p class="section-number">03 / Core capabilities</p>
+                <h2 id="skills-title">A focused Microsoft-first toolkit.</h2>
             </div>
-            <p>A growing set of frontend, backend, database, and developer tools shaped through hands-on practice.</p>
+            <p>A practical stack for automating workflows, building responsive interfaces, managing data, and deploying reliable solutions.</p>
         </div>
 
         <div class="stack-grid">
@@ -149,8 +152,8 @@
 
         <div class="certifications reveal" aria-labelledby="certifications-title">
             <div>
-                <p class="section-number">Certifications &amp; training</p>
-                <h3 id="certifications-title">Learning beyond the classroom.</h3>
+                <p class="section-number">Training &amp; certifications</p>
+                <h3 id="certifications-title">Continuous learning, applied.</h3>
             </div>
             <ol>
                 @for (var index = 0; index < Model.Certifications.Count; index++)
@@ -165,8 +168,8 @@
 <section class="projects section-shell section-block" id="projects" aria-labelledby="projects-title">
     <div class="section-heading horizontal reveal">
         <div>
-            <p class="section-number">04 / Selected projects</p>
-            <h2 id="projects-title">Work built to be useful.</h2>
+            <p class="section-number">04 / Selected solutions</p>
+            <h2 id="projects-title">Built around real needs.</h2>
         </div>
         <p>Academic, company, and community-focused projects where technology, thoughtful design, and practical outcomes come together.</p>
     </div>
@@ -202,8 +205,8 @@
 <section class="experience section-block" id="experience" aria-labelledby="experience-title">
     <div class="section-shell experience-layout">
         <div class="section-heading reveal">
-            <p class="section-number">05 / Experience</p>
-            <h2 id="experience-title">Growing through participation.</h2>
+            <p class="section-number">05 / Experience &amp; involvement</p>
+            <h2 id="experience-title">Learning by contributing.</h2>
             <p>Community programs, industry talks, and collaborative development experiences that expand my perspective.</p>
         </div>
 
@@ -224,7 +227,7 @@
 <section class="motivation section-shell section-block" aria-labelledby="motivation-title">
     <div class="quote-card reveal">
         <div class="quote-label">
-            <p class="section-number" id="motivation-title">Daily motivation</p>
+            <p class="section-number" id="motivation-title">Daily perspective</p>
             <span>Updated every day</span>
         </div>
         <blockquote>
@@ -244,17 +247,17 @@
 
 <section class="contact section-block" id="contact" aria-labelledby="contact-title">
     <div class="contact-inner section-shell reveal">
-        <p class="section-number">06 / Reach out</p>
-        <h2 id="contact-title">Have an idea?<br /><span>Let's make it real.</span></h2>
+        <p class="section-number">06 / Connect</p>
+        <h2 id="contact-title">Let's build something<br /><span>useful together.</span></h2>
         <p>
-            I'm open to internships, freelance projects, full-time opportunities, and conversations with people
-            building meaningful digital products.
+            I'm open to internships, freelance projects, and full-time opportunities involving Microsoft Power
+            Platform, workflow automation, responsive web solutions, and user-centered design.
         </p>
         <div class="contact-actions">
-            <a class="button button-light" href="mailto:sethandreyabrasado@gmail.com">
-                Email me <span aria-hidden="true">↗</span>
+            <a class="button button-light" href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer">
+                Start a Teams chat <span aria-hidden="true">↗</span>
             </a>
-            <a class="button button-outline-light" href="https://teams.microsoft.com/" target="_blank" rel="noreferrer">Schedule a call</a>
+            <a class="button button-outline-light" href="mailto:sethandreyabrasado@gmail.com">Send an email</a>
         </div>
         <div class="social-links" aria-label="Social profiles">
             <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer">GitHub</a>
@@ -263,8 +266,13 @@
             <a href="https://instagram.com/uj2uw3.xx" target="_blank" rel="noreferrer">Instagram</a>
         </div>
         <div class="community-note">
-            <strong>Community matters.</strong>
-            <span>I value developer forums, open-source contributions, and learning alongside peers.</span>
+            <strong>Clear communication matters.</strong>
+            <span>I value thoughtful collaboration, reliable follow-through, and solutions people can use with confidence.</span>
         </div>
     </div>
 </section>
+
+<a class="teams-support" href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer" aria-label="Chat with Seth on Microsoft Teams">
+    <span class="teams-support-icon" aria-hidden="true">T</span>
+    <span><small>Microsoft Teams</small><strong>Chat with Seth</strong></span>
+</a>

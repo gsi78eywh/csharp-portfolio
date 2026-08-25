@@ -519,6 +519,30 @@ a.quote-credit { text-decoration: underline; text-underline-offset: 3px; }
 .hero h1 { max-width: 760px; font-size: clamp(3.4rem, 6.6vw, 6.2rem); }
 .hero h1 span, .contact h2 span { color: #6459c8; }
 
+.hero h1 .owner-badge {
+  display: inline-flex;
+  width: 0.42em;
+  height: 0.42em;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.12em;
+  color: var(--white);
+  vertical-align: 0.52em;
+  background: #1473e6;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(20, 115, 230, 0.12);
+}
+
+.owner-badge svg {
+  width: 68%;
+  height: 68%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.8;
+}
+
 .hero-summary {
   max-width: 620px;
   margin: 30px 0 0;
@@ -705,6 +729,48 @@ a.quote-credit { text-decoration: underline; text-underline-offset: 3px; }
 .footer-inner { min-height: 90px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 12px; }
 .footer-inner p { margin: 0; }
 
+.teams-support {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 178px;
+  padding: 11px 14px 11px 11px;
+  color: var(--white);
+  background: #5b5fc7;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(12, 21, 38, 0.24);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.teams-support:hover,
+.teams-support:focus-visible {
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(12, 21, 38, 0.3);
+}
+
+.teams-support-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: #5b5fc7;
+  background: var(--white);
+  border-radius: 9px;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.teams-support > span:last-child { display: grid; line-height: 1.15; }
+.teams-support small { color: #dfe0ff; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+.teams-support strong { margin-top: 3px; font-size: 12px; }
+
 .reveal { opacity: 1; transform: none; }
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
 .js .reveal.visible { opacity: 1; transform: none; }
@@ -736,7 +802,7 @@ a.quote-credit { text-decoration: underline; text-underline-offset: 3px; }
   .hero { min-height: auto; padding-block: 55px 85px; }
   .eyebrow { align-items: flex-start; font-size: 10px; line-height: 1.5; }
   .eyebrow span { flex: 0 0 auto; margin-top: 3px; }
-  .hero-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .hero-actions { display: grid; grid-template-columns: 1fr; }
   .hero-actions .button { width: 100%; }
   .hero-actions .text-link { grid-column: 1 / -1; justify-content: center; }
   .hero h1 { font-size: clamp(3.05rem, 14vw, 4.5rem); }
@@ -757,4 +823,6 @@ a.quote-credit { text-decoration: underline; text-underline-offset: 3px; }
   .contact-inner::after { opacity: 0.45; }
   .button-light { max-width: 100%; overflow-wrap: anywhere; }
   .footer-inner { min-height: 110px; display: grid; align-content: center; gap: 4px; }
+  .teams-support { right: 15px; bottom: 15px; min-width: 0; padding: 9px; border-radius: 11px; }
+  .teams-support > span:last-child { display: none; }
 }

@@ -9,6 +9,8 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
     public string Name { get; } = "Seth Andrey Jabagat";
     public string Location { get; } = "Dalaguete, Cebu, Philippines";
     public string Role { get; } = "Microsoft Power Platform Developer | UI/UX Designer";
+    public string MicrosoftTeamsChatUrl { get; } =
+        "https://teams.microsoft.com/l/chat/0/0?users=sethandreyabrasado@gmail.com&message=Hi%20Seth%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.";
 
     public DailyQuote Quote { get; private set; } = new(
         "Always focus on your own lane. No one finds happiness by pursuing someone else's life path.",
@@ -29,10 +31,10 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
 
     public IReadOnlyList<SkillGroup> TechStack { get; } =
     [
-        new("Frontend Development", ["HTML", "CSS", "JavaScript", "React", "Tailwind"]),
-        new("Backend Development", ["PHP", "Laravel", "Java", "Node.js", "C#", "ASP.NET Core"]),
-        new("Database Development", ["MySQL"]),
-        new("Tools & Technologies", ["Microsoft Power Platform", "GitHub", "Docker", "NPM", "Vim", "GitHub Copilot"])
+        new("Microsoft Ecosystem", ["Microsoft Power Platform", "Microsoft 365", "C#", "ASP.NET Core"]),
+        new("Web & Data", ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL"]),
+        new("Cloud & Deployment", ["Microsoft Azure", "Vercel", "Render", "Docker", "GitHub"]),
+        new("AI & Design Workflow", ["GitHub Copilot", "Microsoft Copilot", "ChatGPT", "VS Code", "UI/UX Design"])
     ];
 
     public IReadOnlyList<string> Certifications { get; } =
