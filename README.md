@@ -4,7 +4,7 @@ A responsive portfolio and printable résumé built with C#, ASP.NET Core 8, and
 
 ## Highlights
 
-- Profile, education, tech stack, certifications, projects, and experience
+- Profile, education, tech stack, certifications, and academic, company, and community-focused projects
 - Responsive desktop and mobile design
 - Print-friendly résumé page at `/Resume`
 - Server-side daily motivation from the ZenQuotes API

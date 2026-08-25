@@ -8,7 +8,7 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
 {
     public string Name { get; } = "Seth Andrey Jabagat";
     public string Location { get; } = "Dalaguete, Cebu, Philippines";
-    public string Role { get; } = "Junior Frontend Developer | UI/UX Enthusiast";
+    public string Role { get; } = "Microsoft Power Platform Developer | UI/UX Designer";
 
     public DailyQuote Quote { get; private set; } = new(
         "Always focus on your own lane. No one finds happiness by pursuing someone else's life path.",
@@ -32,7 +32,7 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
         new("Frontend Development", ["HTML", "CSS", "JavaScript", "React", "Tailwind"]),
         new("Backend Development", ["PHP", "Laravel", "Java", "Node.js", "C#", "ASP.NET Core"]),
         new("Database Development", ["MySQL"]),
-        new("Tools & Technologies", ["GitHub", "Docker", "NPM", "Vim", "GitHub Copilot"])
+        new("Tools & Technologies", ["Microsoft Power Platform", "GitHub", "Docker", "NPM", "Vim", "GitHub Copilot"])
     ];
 
     public IReadOnlyList<string> Certifications { get; } =
@@ -55,17 +55,23 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
             ["Responsive UI", "Database", "School Project"],
             "Completed"),
         new(
-            "Mini E-commerce Frontend",
-            "Sep 2025 – Nov 2025",
-            "Designed a responsive shopping interface with product browsing, cart management, and a streamlined checkout experience.",
-            ["Frontend", "Responsive Design", "UX"],
-            "Completed"),
+            "Hotel Booking System",
+            "School Project",
+            "Developed a hotel booking system using PHP and the Laravel framework, applying full-stack development practices to organize reservations and booking workflows.",
+            ["PHP", "Laravel", "Full-Stack Development"],
+            "PHP / Laravel"),
         new(
-            "Kombat Console Games",
-            "Jul 2025 – Sep 2025",
-            "Built a console combat game featuring character selection, turn-based battles, and health tracking to demonstrate programming fundamentals.",
-            ["Game Logic", "Console", "Programming Fundamentals"],
-            "Completed")
+            "Activity Proposal System",
+            "Company Project",
+            "Built a Microsoft Power Platform solution that generates activity proposals, captures budget and audit requirements, and produces budget and financial reports for review.",
+            ["Microsoft Power Platform", "Process Automation", "Financial Reporting"],
+            "Power Platform"),
+        new(
+            "REACH System — Relief Automated Messaging",
+            "Community Solution",
+            "Designed an automated messaging and relief-coordination system that uses SIM-card notifications to inform residents about aid distribution, barangay events, floods, and earthquakes. The solution also helps identify duplicate aid claims within the same family or household to support fair distribution.",
+            ["SMS Automation", "Relief Coordination", "Community Safety"],
+            "Solution Design")
     ];
 
     public IReadOnlyList<ExperienceItem> Experience { get; } =
