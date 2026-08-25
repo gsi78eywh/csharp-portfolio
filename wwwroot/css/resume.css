@@ -244,7 +244,7 @@ h3 a:focus-visible {
 .resume-main article p {
   margin: 1.5mm 0 0;
   color: var(--muted);
-  font-size: 8.7pt;
+  font-size: 9pt;
   line-height: 1.42;
 }
 
@@ -261,7 +261,7 @@ h3 a:focus-visible {
 .resume-sidebar section > p {
   margin: 1.2mm 0 0;
   color: var(--muted);
-  font-size: 8.2pt;
+  font-size: 8.5pt;
   line-height: 1.4;
 }
 
@@ -271,7 +271,7 @@ h3 a:focus-visible {
 
 .resume-sidebar strong {
   color: var(--text);
-  font-size: 8.4pt;
+  font-size: 8.6pt;
   font-weight: 750;
 }
 
@@ -279,7 +279,7 @@ h3 a:focus-visible {
   padding: 0;
   margin: 0;
   color: var(--muted);
-  font-size: 8.2pt;
+  font-size: 8.5pt;
   line-height: 1.38;
   list-style: none;
 }
@@ -388,7 +388,7 @@ h3 a:focus-visible {
   .resume-sheet {
     width: 210mm;
     min-height: 0;
-    padding: 11mm 13mm;
+    padding: 12.7mm;
     margin: 0;
     box-shadow: none;
   }
