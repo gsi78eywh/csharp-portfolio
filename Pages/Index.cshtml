@@ -1,0 +1,144 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "C# Web Developer Portfolio";
+}
+
+<section class="hero section-shell" aria-labelledby="hero-title">
+    <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> @Model.Role · Available for junior opportunities</p>
+        <h1 id="hero-title">
+            Hi, I'm <span>@Model.Name.</span><br />
+            I build useful things for the web.
+        </h1>
+        <p class="hero-summary">
+            I'm an aspiring C# developer learning to turn ideas into clean, dependable web applications
+            with .NET and ASP.NET Core.
+        </p>
+        <div class="hero-actions">
+            <a class="button button-primary" href="#projects">View my work <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#contact">Contact me</a>
+        </div>
+        <ul class="hero-meta" aria-label="Quick information">
+            <li><strong>Based in</strong><span>Philippines</span></li>
+            <li><strong>Focused on</strong><span>C# &amp; web development</span></li>
+            <li><strong>Status</strong><span>Learning &amp; building</span></li>
+        </ul>
+    </div>
+
+    <div class="hero-visual reveal" aria-label="C# developer code sample">
+        <div class="portrait-card">
+            <div class="portrait-grid"></div>
+            <div class="initials" aria-hidden="true">SJ</div>
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <div class="status-card">
+                <span class="status-dot"></span>
+                <div>
+                    <small>Current focus</small>
+                    <strong>ASP.NET Core</strong>
+                </div>
+            </div>
+        </div>
+        <div class="code-window" aria-hidden="true">
+            <div class="window-bar"><i></i><i></i><i></i><span>Developer.cs</span></div>
+            <pre><code><em>public class</em> Developer
+{
+    <b>string</b> Name = "Seth";
+    <b>string</b> Language = "C#";
+    <b>bool</b> KeepsLearning = <mark>true</mark>;
+}</code></pre>
+        </div>
+    </div>
+</section>
+
+<section class="about section-shell section-block" id="about" aria-labelledby="about-title">
+    <div class="section-heading reveal">
+        <p class="section-number">01 / About</p>
+        <h2 id="about-title">Curious by nature.<br />Consistent by choice.</h2>
+    </div>
+    <div class="about-content reveal">
+        <p class="lead">
+            I'm building a strong foundation in software development through hands-on C# projects.
+            I enjoy breaking down problems, learning how systems work, and improving my code one project at a time.
+        </p>
+        <p>
+            My current goal is to grow into a professional .NET developer. This portfolio is part of that journey:
+            a real web application built with C#, Razor Pages, semantic HTML, and responsive CSS.
+        </p>
+        <div class="learning-note">
+            <span aria-hidden="true">↗</span>
+            <p><strong>Right now I'm learning</strong> object-oriented programming, web APIs, databases, and clean code practices.</p>
+        </div>
+    </div>
+</section>
+
+<section class="skills section-block" id="skills" aria-labelledby="skills-title">
+    <div class="section-shell">
+        <div class="section-heading horizontal reveal">
+            <div>
+                <p class="section-number">02 / Skills</p>
+                <h2 id="skills-title">My growing toolkit.</h2>
+            </div>
+            <p>Technologies I use today—and keep improving through practice.</p>
+        </div>
+
+        <div class="skill-grid reveal">
+            @for (var index = 0; index < Model.CoreSkills.Count; index++)
+            {
+                <article class="skill-card">
+                    <span>@((index + 1).ToString("00"))</span>
+                    <h3>@Model.CoreSkills[index]</h3>
+                    <div class="skill-line"><i style="--skill-level: @(72 + (index % 3 * 8))%"></i></div>
+                </article>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="projects section-shell section-block" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading horizontal reveal">
+        <div>
+            <p class="section-number">03 / Projects</p>
+            <h2 id="projects-title">Things I've built.</h2>
+        </div>
+        <p>Small projects, built deliberately, that document my progress as a developer.</p>
+    </div>
+
+    <div class="project-list">
+        @for (var index = 0; index < Model.Projects.Count; index++)
+        {
+            var project = Model.Projects[index];
+            <article class="project-card reveal">
+                <div class="project-index">@((index + 1).ToString("00"))</div>
+                <div class="project-body">
+                    <div class="project-topline">
+                        <h3>@project.Title</h3>
+                        <span>@project.Status</span>
+                    </div>
+                    <p>@project.Description</p>
+                    <ul aria-label="Technologies used for @project.Title">
+                        @foreach (string technology in project.Technologies)
+                        {
+                            <li>@technology</li>
+                        }
+                    </ul>
+                </div>
+                <span class="project-arrow" aria-hidden="true">↗</span>
+            </article>
+        }
+    </div>
+</section>
+
+<section class="contact section-block" id="contact" aria-labelledby="contact-title">
+    <div class="contact-inner section-shell reveal">
+        <p class="section-number">04 / Contact</p>
+        <h2 id="contact-title">Let's build something<br /><span>worth sharing.</span></h2>
+        <p>I'm open to learning opportunities, junior roles, internships, and conversations with other developers.</p>
+        <a class="button button-light" href="mailto:sethandreyabrasado@gmail.com">sethandreyabrasado@gmail.com <span aria-hidden="true">↗</span></a>
+        <div class="social-links" aria-label="Social links">
+            <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="mailto:sethandreyabrasado@gmail.com">Email</a>
+        </div>
+    </div>
+</section>

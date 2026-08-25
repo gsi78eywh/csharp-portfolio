@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The developer portfolio of Seth Andrey Jabagat, an aspiring C# and ASP.NET Core developer." />
+    <title>@ViewData["Title"] | Seth Andrey Jabagat</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+        <nav class="nav-shell" aria-label="Main navigation">
+            <a class="wordmark" asp-page="/Index" aria-label="Seth's portfolio home">
+                <span class="wordmark-mark">SJ</span>
+                <span>Seth.dev</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="visually-hidden">Toggle navigation</span>
+            </button>
+
+            <div class="nav-links" id="site-navigation" data-menu>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a class="nav-contact" href="#contact">Let's talk</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; @DateTime.Now.Year Seth Andrey Jabagat</p>
+            <p>Designed and built with C# + ASP.NET Core.</p>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
