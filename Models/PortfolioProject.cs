@@ -5,4 +5,5 @@ public sealed record PortfolioProject(
     string Period,
     string Description,
     IReadOnlyList<string> Technologies,
-    string Status);
+    string Status,
+    string? RepositoryUrl = null);

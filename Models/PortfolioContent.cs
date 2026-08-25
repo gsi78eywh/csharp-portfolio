@@ -6,6 +6,7 @@ public sealed record EducationItem(
     string School,
     string ImagePath,
     string ImageAlt,
+    string WebsiteUrl,
     bool UseContainedImage = false);
 
 public sealed record SkillGroup(
