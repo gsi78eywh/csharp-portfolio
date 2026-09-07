@@ -37,3 +37,8 @@ public sealed record DailyQuote(
     string Text,
     string Author,
     bool IsFromApi);
+
+public sealed record CourseItem(
+    string Title,
+    string Category,
+    string Status = "Completed & Validated");

@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initAiDrawer();
     initMobileNav();
     initTechPills();
+    initCopyEmail();
 });
 
 /* --------------------------------------------------------------------------
@@ -553,3 +554,42 @@ function initMobileNav() {
         });
     });
 }
+
+/* --------------------------------------------------------------------------
+   6. COPY EMAIL ADDRESS TO CLIPBOARD
+   -------------------------------------------------------------------------- */
+function initCopyEmail() {
+    const copyBtn = document.getElementById("copy-email-btn");
+    const indicator = document.getElementById("copy-status-indicator");
+    if (!copyBtn) return;
+
+    copyBtn.addEventListener("click", async () => {
+        const email = "sethandreyabrasado@gmail.com";
+        try {
+            await navigator.clipboard.writeText(email);
+            showCopiedFeedback();
+        } catch (err) {
+            // Fallback for older browsers
+            const textarea = document.createElement("textarea");
+            textarea.value = email;
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            showCopiedFeedback();
+        }
+    });
+
+    function showCopiedFeedback() {
+        if (!indicator) return;
+        indicator.textContent = "Copied!";
+        indicator.classList.add("copied");
+        setTimeout(() => {
+            indicator.textContent = "Copy";
+            indicator.classList.remove("copied");
+        }, 2200);
+    }
+}
+

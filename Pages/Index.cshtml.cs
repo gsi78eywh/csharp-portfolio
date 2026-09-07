@@ -55,14 +55,13 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
 
     public IReadOnlyList<SkillCategoryWithRatings> RatedSkills { get; } =
     [
-        new("Frontend",
+        new("Microsoft Power Platform & Cloud",
         [
-            new("HTML", 9, "Advanced (9/10)", "orange", "html", "Semantic HTML5, accessible layouts, and SEO best practices"),
-            new("CSS", 9, "Advanced (9/10)", "blue", "css", "Modern CSS3, responsive Flexbox/Grid systems, and custom properties"),
-            new("JavaScript", 7, "Skilled (7/10)", "yellow", "js", "ES6+ syntax, asynchronous fetch, and dynamic DOM manipulation"),
-            new("TypeScript", 8, "Proficient (8/10)", "sky", "ts", "Static typing, component contracts, and interface definitions"),
-            new("React", 8, "Proficient (8/10)", "cyan", "react", "Component lifecycle, state management, hooks, and responsive SPAs"),
-            new("Tailwind CSS", 8, "Proficient (8/10)", "teal", "tailwind", "Utility-first design, fluid responsive sizing, and rapid prototyping")
+            new("Power Apps", 9, "Advanced (9/10)", "purple", "powerapps", "Custom Canvas & Model-driven applications with responsive multi-screen UX"),
+            new("Power Automate", 9, "Advanced (9/10)", "blue", "powerautomate", "Automated multi-tier approval flows, scheduled jobs, and trigger logic"),
+            new("SharePoint", 9, "Advanced (9/10)", "teal", "sharepoint", "Enterprise list data architecture, document libraries, and access controls"),
+            new("Microsoft 365", 8, "Proficient (8/10)", "sky", "ms365", "Teams integration, Outlook automation, and organizational workflows"),
+            new("Dataverse", 7, "Skilled (7/10)", "indigo", "dataverse", "Common Data Model entities, business rules, and relational data stores")
         ]),
         new("Backend & Database",
         [
@@ -74,13 +73,14 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
             new("PHP", 7, "Skilled (7/10)", "violet", "php", "Backend processing, server scripting, and authentication handling"),
             new("Node.js", 7, "Skilled (7/10)", "green", "nodejs", "Express APIs, npm ecosystem, and asynchronous runtime execution")
         ]),
-        new("Microsoft Power Platform & Cloud",
+        new("Frontend",
         [
-            new("Power Apps", 9, "Advanced (9/10)", "purple", "powerapps", "Custom Canvas & Model-driven applications with responsive multi-screen UX"),
-            new("Power Automate", 9, "Advanced (9/10)", "blue", "powerautomate", "Automated multi-tier approval flows, scheduled jobs, and trigger logic"),
-            new("SharePoint", 9, "Advanced (9/10)", "teal", "sharepoint", "Enterprise list data architecture, document libraries, and access controls"),
-            new("Microsoft 365", 8, "Proficient (8/10)", "sky", "ms365", "Teams integration, Outlook automation, and organizational workflows"),
-            new("Dataverse", 7, "Skilled (7/10)", "indigo", "dataverse", "Common Data Model entities, business rules, and relational data stores")
+            new("HTML", 9, "Advanced (9/10)", "orange", "html", "Semantic HTML5, accessible layouts, and SEO best practices"),
+            new("CSS", 9, "Advanced (9/10)", "blue", "css", "Modern CSS3, responsive Flexbox/Grid systems, and custom properties"),
+            new("JavaScript", 7, "Skilled (7/10)", "yellow", "js", "ES6+ syntax, asynchronous fetch, and dynamic DOM manipulation"),
+            new("TypeScript", 8, "Proficient (8/10)", "sky", "ts", "Static typing, component contracts, and interface definitions"),
+            new("React", 8, "Proficient (8/10)", "cyan", "react", "Component lifecycle, state management, hooks, and responsive SPAs"),
+            new("Tailwind CSS", 8, "Proficient (8/10)", "teal", "tailwind", "Utility-first design, fluid responsive sizing, and rapid prototyping")
         ]),
         new("Tools & AI Workflow",
         [
@@ -95,12 +95,20 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
 
     public IReadOnlyList<string> Certifications { get; } =
     [
-        "Google Data Analytics",
-        "Python Automation with Google",
-        "Google UI/UX Design Training",
-        "Rapid Application Development",
-        "Web Development Fundamentals",
-        "Database Management Systems"
+        "Google Data Analytics Professional Specialization",
+        "Using Python to Interact with the Operating System (Google)",
+        "Crash Course on Python (Google)",
+        "Google UI/UX Design Fundamentals"
+    ];
+
+    public IReadOnlyList<CourseItem> AcademicCourses { get; } =
+    [
+        new("Object-Oriented Programming", "C# & Java Architecture", "Completed & Validated"),
+        new("Database Management Systems", "Relational SQL & Schema Design", "Completed & Validated"),
+        new("Rapid Application Development", "Agile Prototyping & Low-Code", "Completed & Validated"),
+        new("Data Structures & Algorithms", "Core Computational Logic", "Completed & Validated"),
+        new("Web Systems & Technologies", "Full-Stack Web Engineering", "Completed & Validated"),
+        new("Systems Integration & Architecture", "Enterprise APIs & Workflows", "Completed & Validated")
     ];
 
     public int ShippedProjectsCount => Projects.Count;
@@ -110,26 +118,26 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
     [
         new(
             "Library Management System",
-            "Aug 2025 – Nov 2025",
+            "Academic Platform · Database Architecture",
             "Web-based catalog platform with responsive search, borrowing records, and real-time inventory tracking; streamlined resource access for 70% of student users.",
             ["Responsive UI", "Database Design", "Academic Project"],
             "Completed"),
         new(
             "Hotel Booking System",
-            "Full-Stack Web App",
+            "Full-Stack Web App · Laravel & MySQL",
             "Full-stack reservation platform built with Laravel and MySQL, managing room inventories, guest billing, check-in schedules, and role-based staff workflows.",
             ["PHP", "Laravel", "MySQL"],
             "Full-Stack",
             "https://github.com/gsi78eywh/Saystem"),
         new(
             "Activity Proposal System",
-            "Enterprise Workflow",
+            "Enterprise Workflow · Microsoft Power Platform",
             "Microsoft Power Platform enterprise workflow automating budget requests, organizational proposal compliance, multi-tier approvals, and financial audits.",
             ["Power Apps", "Power Automate", "Reporting"],
             "Power Platform"),
         new(
             "REACH System — Relief Automated Messaging",
-            "Community Platform",
+            "Disaster Relief Platform · React & SMS Automation",
             "Emergency disaster relief system coordinating automated SMS broadcasts, distribution checkpoints, and household duplicate-aid verification.",
             ["React", "SMS Workflow", "Community Data"],
             "Prototype",
@@ -139,16 +147,16 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
     public IReadOnlyList<ExperienceItem> Experience { get; } =
     [
         new(
-            "Youth Empowerment Participant",
-            "January 2025 – Present",
-            "Build leadership and digital skills through collaborative community workshops and peer learning."),
-        new(
             "Industry Learning — Accenture & AI Talks",
             "January – February 2026",
-            "Studied practical AI, cloud, and industry trends through technical talks, case examples, and Q&A sessions."),
+            "Studied practical AI, cloud infrastructure, and enterprise technology trends through technical talks, case examples, and Q&A sessions."),
+        new(
+            "Youth Empowerment Participant",
+            "January 2025 – Present",
+            "Build leadership, technical communication, and digital collaboration skills through workshops and community peer learning."),
         new(
             "Alliance Student Developer",
-            "Aug – Dec 2025",
+            "August – December 2025",
             "Collaborated on low-code applications, workflow improvements, and rapid prototypes that became functional team solutions.")
     ];
 

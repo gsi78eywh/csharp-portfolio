@@ -34,15 +34,15 @@
                         </p>
                     </div>
 
-                    <!-- AI Assistant Left-Sidebar Quick Trigger (Matching Reference Structure) -->
-                    <div class="sidebar-ai-cta-wrap">
-                        <button type="button" class="sidebar-ai-btn" data-open-ai-drawer aria-label="Open AI Assistant (Alt + K)">
-                            <span class="sidebar-ai-btn-left">
-                                <span class="sidebar-ai-btn-icon">🤖</span>
-                                <span class="sidebar-ai-btn-label">Ask AI Assistant</span>
+                    <!-- Left-Sidebar Direct Résumé Action -->
+                    <div class="sidebar-resume-cta-wrap">
+                        <a asp-page="/Resume" class="sidebar-resume-btn" aria-label="View Full Résumé">
+                            <span class="sidebar-resume-btn-left">
+                                <span class="sidebar-resume-btn-icon">📄</span>
+                                <span class="sidebar-resume-btn-label">View Full Résumé</span>
                             </span>
-                            <kbd class="key-badge">Alt + K</kbd>
-                        </button>
+                            <span class="arrow-glyph">↗</span>
+                        </a>
                     </div>
                 </div>
 
@@ -142,7 +142,7 @@
                     <span class="metric-icon">&lt;/&gt;</span>
                     <span class="metric-tag">CORE TECH STACK</span>
                 </div>
-                <div class="metric-value">15+ Tech</div>
+                <div class="metric-value">20+ Tech</div>
                 <div class="metric-sub">Power Platform, C#, Laravel, React</div>
             </article>
 
@@ -356,22 +356,23 @@
             </div>
         </section>
 
-        <!-- 07 // COURSES SECTION -->
+        <!-- 07 // ACADEMIC COURSEWORK SECTION -->
         <section class="section-card" id="courses" aria-labelledby="courses-heading">
             <div class="card-meta-header">
-                <span class="section-code">07 // COURSES &amp; TRAINING <span class="dot-accent">•</span></span>
-                <span class="location-tag">Continuous Growth</span>
+                <span class="section-code">07 // ACADEMIC COURSEWORK <span class="dot-accent">•</span></span>
+                <span class="location-tag">USJ-R Curriculum</span>
             </div>
-            <h3 class="section-subheading" id="courses-heading">Curated technical training &amp; skill accelerators.</h3>
+            <h3 class="section-subheading" id="courses-heading">Core computer technology coursework &amp; academic training.</h3>
 
             <div class="courses-list-grid">
-                @foreach (var cert in Model.Certifications)
+                @foreach (var course in Model.AcademicCourses)
                 {
                     <div class="course-list-item">
                         <div class="course-idx-bullet">▸</div>
                         <div class="course-body">
-                            <h4 class="course-name">@cert</h4>
-                            <span class="course-tag">Completed &amp; Validated</span>
+                            <h4 class="course-name">@course.Title</h4>
+                            <span class="course-track-sub">@course.Category</span>
+                            <span class="course-tag">@course.Status</span>
                         </div>
                     </div>
                 }
@@ -381,7 +382,7 @@
         <!-- 08 // BOOK OF ANSWERS & DAILY PERSPECTIVE -->
         <section class="section-card" id="answers" aria-labelledby="answers-heading">
             <div class="card-meta-header">
-                <span class="section-code">08 // BOOK OF ANSWERS <span class="dot-accent">•</span></span>
+                <span class="section-code">08 // BOOK OF ANSWERS &amp; FAQS <span class="dot-accent">•</span></span>
                 <span class="location-tag">Philosophy &amp; Insights</span>
             </div>
             <h3 class="section-subheading" id="answers-heading">Daily perspective &amp; developer knowledge base.</h3>
@@ -454,16 +455,18 @@
                     <span class="teams-icon">T</span>
                     <span>Chat on Teams</span>
                 </a>
-                <span class="contact-direct-address" title="Direct Email Address">
-                    sethandreyabrasado@gmail.com
-                </span>
+                <button type="button" class="contact-direct-address copy-email-btn" id="copy-email-btn" title="Click to copy email address" aria-label="Copy email address to clipboard">
+                    <span class="copy-email-icon">📋</span>
+                    <span class="copy-email-text">sethandreyabrasado@gmail.com</span>
+                    <span class="copy-status-indicator" id="copy-status-indicator">Copy</span>
+                </button>
             </div>
 
             <div class="social-channels-row">
                 <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer" class="channel-link">GitHub ↗</a>
                 <a href="https://www.linkedin.com/in/seth-andrey-abrasado-868419366/" target="_blank" rel="noreferrer" class="channel-link">LinkedIn ↗</a>
-                <a href="https://www.facebook.com/profile.php?id=61582551204852" target="_blank" rel="noreferrer" class="channel-link">Facebook ↗</a>
-                <a asp-page="/Resume" class="channel-link">View Résumé ↗</a>
+                <a href="mailto:sethandreyabrasado@gmail.com" class="channel-link">Email ↗</a>
+                <a asp-page="/Resume" class="channel-link">Full Résumé ↗</a>
             </div>
         </section>
 
