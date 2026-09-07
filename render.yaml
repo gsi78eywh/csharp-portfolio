@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: seth-jabagat-portfolio
+    name: sethandreyjabagat-portfolio
     runtime: docker
     plan: free
     region: singapore

@@ -13,6 +13,21 @@ public sealed record SkillGroup(
     string Category,
     IReadOnlyList<string> Skills);
 
+public sealed record SkillRating(
+    string Name,
+    int Rating,
+    string Level,
+    string DotColor = "blue",
+    string IconKey = "",
+    string Description = "")
+{
+    public int Percentage => Rating * 10;
+}
+
+public sealed record SkillCategoryWithRatings(
+    string Category,
+    IReadOnlyList<SkillRating> Skills);
+
 public sealed record ExperienceItem(
     string Role,
     string Period,

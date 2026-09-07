@@ -47,10 +47,50 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
 
     public IReadOnlyList<SkillGroup> TechStack { get; } =
     [
-        new("Microsoft & Low-Code", ["Power Apps", "Power Automate", "Microsoft 365", "C#", "ASP.NET Core"]),
-        new("Web Development", ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "MySQL"]),
+        new("Microsoft & Low-Code", ["Power Apps", "Power Automate", "SharePoint", "Microsoft 365", "Dataverse", "C#", "ASP.NET Core"]),
+        new("Web Development", ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Tailwind CSS", "PHP", "Laravel", "MySQL", "Node.js", "Python"]),
         new("Cloud & Delivery", ["Microsoft Azure", "Vercel", "Render", "Docker", "GitHub"]),
-        new("Design & AI Workflow", ["UI/UX Design", "Responsive Design", "GitHub Copilot", "Microsoft Copilot", "ChatGPT", "VS Code"])
+        new("Design & AI Workflow", ["AI & Agent-Assisted Dev", "GitHub Copilot", "Microsoft Copilot", "ChatGPT", "VS Code", "Postman"])
+    ];
+
+    public IReadOnlyList<SkillCategoryWithRatings> RatedSkills { get; } =
+    [
+        new("Frontend",
+        [
+            new("HTML", 9, "Advanced (9/10)", "orange", "html", "Semantic HTML5, accessible layouts, and SEO best practices"),
+            new("CSS", 9, "Advanced (9/10)", "blue", "css", "Modern CSS3, responsive Flexbox/Grid systems, and custom properties"),
+            new("JavaScript", 7, "Skilled (7/10)", "yellow", "js", "ES6+ syntax, asynchronous fetch, and dynamic DOM manipulation"),
+            new("TypeScript", 8, "Proficient (8/10)", "sky", "ts", "Static typing, component contracts, and interface definitions"),
+            new("React", 8, "Proficient (8/10)", "cyan", "react", "Component lifecycle, state management, hooks, and responsive SPAs"),
+            new("Tailwind CSS", 8, "Proficient (8/10)", "teal", "tailwind", "Utility-first design, fluid responsive sizing, and rapid prototyping")
+        ]),
+        new("Backend & Database",
+        [
+            new("Laravel", 8, "Proficient (8/10)", "red", "laravel", "MVC architecture, Eloquent ORM, RESTful routing, and Blade templating"),
+            new("MySQL", 8, "Proficient (8/10)", "blue", "mysql", "Relational database schema design, indexing, and complex queries"),
+            new("Python", 8, "Proficient (8/10)", "yellow", "python", "OS automation scripting, data manipulation, and workflow scripts"),
+            new("C#", 7, "Skilled (7/10)", "purple", "csharp", "Object-oriented programming, LINQ data queries, and core logic"),
+            new(".NET / ASP.NET", 7, "Skilled (7/10)", "indigo", "dotnet", "ASP.NET Core Razor Pages, Web APIs, and dependency injection"),
+            new("PHP", 7, "Skilled (7/10)", "violet", "php", "Backend processing, server scripting, and authentication handling"),
+            new("Node.js", 7, "Skilled (7/10)", "green", "nodejs", "Express APIs, npm ecosystem, and asynchronous runtime execution")
+        ]),
+        new("Microsoft Power Platform & Cloud",
+        [
+            new("Power Apps", 9, "Advanced (9/10)", "purple", "powerapps", "Custom Canvas & Model-driven applications with responsive multi-screen UX"),
+            new("Power Automate", 9, "Advanced (9/10)", "blue", "powerautomate", "Automated multi-tier approval flows, scheduled jobs, and trigger logic"),
+            new("SharePoint", 9, "Advanced (9/10)", "teal", "sharepoint", "Enterprise list data architecture, document libraries, and access controls"),
+            new("Microsoft 365", 8, "Proficient (8/10)", "sky", "ms365", "Teams integration, Outlook automation, and organizational workflows"),
+            new("Dataverse", 7, "Skilled (7/10)", "indigo", "dataverse", "Common Data Model entities, business rules, and relational data stores")
+        ]),
+        new("Tools & AI Workflow",
+        [
+            new("AI & Agent-Assisted", 9, "Expert Workflow (9/10)", "indigo", "ai", "Prompt engineering, agentic development, Antigravity, and Copilot workflows"),
+            new("VS Code", 9, "Advanced (9/10)", "blue", "vscode", "Extensions ecosystem, integrated terminal, and multi-repo workflows"),
+            new("Git", 8, "Proficient (8/10)", "orange", "git", "Version control, branching strategies, and merge resolution"),
+            new("GitHub", 8, "Proficient (8/10)", "dark", "github", "Remote repositories, pull request reviews, and open-source collaboration"),
+            new("Postman", 8, "Proficient (8/10)", "orange", "postman", "API testing, request collections, and payload inspection"),
+            new("Docker & Cloud", 7, "Skilled (7/10)", "cyan", "docker", "Containerization basics, environment isolation, and Render/Azure deploys")
+        ])
     ];
 
     public IReadOnlyList<string> Certifications { get; } =
@@ -63,31 +103,34 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
         "Database Management Systems"
     ];
 
+    public int ShippedProjectsCount => Projects.Count;
+    public int RepositoriesCount => Projects.Count(p => !string.IsNullOrWhiteSpace(p.RepositoryUrl));
+
     public IReadOnlyList<PortfolioProject> Projects { get; } =
     [
         new(
             "Library Management System",
             "Aug 2025 – Nov 2025",
-            "Responsive school system for catalog access and resource discovery; 70% of surveyed users reported easier access to learning resources.",
+            "Web-based catalog platform with responsive search, borrowing records, and real-time inventory tracking; streamlined resource access for 70% of student users.",
             ["Responsive UI", "Database Design", "Academic Project"],
             "Completed"),
         new(
             "Hotel Booking System",
-            "School Project",
-            "Laravel reservation and operations system covering rooms, guests, bookings, check-in, billing, and role-based workflows.",
+            "Full-Stack Web App",
+            "Full-stack reservation platform built with Laravel and MySQL, managing room inventories, guest billing, check-in schedules, and role-based staff workflows.",
             ["PHP", "Laravel", "MySQL"],
             "Full-Stack",
             "https://github.com/gsi78eywh/Saystem"),
         new(
             "Activity Proposal System",
-            "Company Project",
-            "Power Platform workflow that standardizes proposals, budget requests, audit requirements, approvals, and financial reporting.",
+            "Enterprise Workflow",
+            "Microsoft Power Platform enterprise workflow automating budget requests, organizational proposal compliance, multi-tier approvals, and financial audits.",
             ["Power Apps", "Power Automate", "Reporting"],
             "Power Platform"),
         new(
             "REACH System — Relief Automated Messaging",
-            "Community Solution",
-            "Community relief platform for SMS notices, emergency alerts, distribution updates, and household-level duplicate-aid checks.",
+            "Community Platform",
+            "Emergency disaster relief system coordinating automated SMS broadcasts, distribution checkpoints, and household duplicate-aid verification.",
             ["React", "SMS Workflow", "Community Data"],
             "Prototype",
             "https://github.com/gsi78eywh/REACH-v4")

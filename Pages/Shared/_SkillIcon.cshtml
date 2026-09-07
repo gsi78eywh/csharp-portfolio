@@ -1,0 +1,170 @@
+@model string
+@{
+    var key = (Model ?? "").ToLowerInvariant();
+}
+
+@switch (key)
+{
+    case "html":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#E44D26" aria-hidden="true">
+            <path d="M3 2l1.8 17.8L12 22l7.2-2.2L21 2H3zm14.6 6.2h-7.8l.2 2.2h7.4l-.6 6.3-4.8 1.4-4.8-1.4-.3-3.4h2.2l.1 1.6 2.8.8 2.8-.8.3-2.9H6.9l-.7-6.4h11.9l-.5 2.2z"/>
+        </svg>
+        break;
+
+    case "css":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#264DE4" aria-hidden="true">
+            <path d="M3 2l1.8 17.8L12 22l7.2-2.2L21 2H3zm14.8 4.2l-.3 2.2H8.4l.2 2.2h8.5l-.8 8.1-4.3 1.2-4.3-1.2-.3-3.3h2.2l.1 1.6 2.3.6 2.3-.6.2-2.7H6.7l-.6-6.4h11.7z"/>
+        </svg>
+        break;
+
+    case "js":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect width="24" height="24" rx="3" fill="#F7DF1E"/>
+            <path d="M11.8 16.5c0 1.9-1.2 2.7-2.9 2.7-1.5 0-2.5-.7-3-1.6l1.6-1c.3.5.7.9 1.4.9.7 0 1.2-.3 1.2-1.2V9.8h1.7v6.7zm7.5-.2c-.3 1.7-1.8 2.9-3.9 2.9-2.3 0-3.8-1.5-3.8-3.8 0-2.3 1.6-3.8 3.9-3.8 1.9 0 3.2 1 3.7 2.3l-1.5.8c-.3-.8-.9-1.3-2.2-1.3-1.2 0-2.1.8-2.1 2 0 1.2.9 2 2.1 2 1.3 0 1.8-.6 2.1-1.3l1.8.2z" fill="#000000"/>
+        </svg>
+        break;
+
+    case "ts":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect width="24" height="24" rx="3" fill="#3178C6"/>
+            <path d="M12.5 12.3H8.8v6.9H6.9v-6.9H3.2v-1.7h9.3v1.7zm8.3 1.9c-.3 1.9-1.8 3.1-4 3.1-2.4 0-4-1.6-4-4 0-2.4 1.7-4 4.1-4 2 0 3.4 1.1 3.9 2.4l-1.6.8c-.3-.8-1-1.4-2.3-1.4-1.3 0-2.2.9-2.2 2.2 0 1.3.9 2.2 2.2 2.2 1.4 0 1.9-.7 2.2-1.4l1.7.1z" fill="#FFFFFF"/>
+        </svg>
+        break;
+
+    case "react":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="1.8" aria-hidden="true">
+            <ellipse cx="12" cy="12" rx="10" ry="4"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+            <circle cx="12" cy="12" r="1.8" fill="#61DAFB"/>
+        </svg>
+        break;
+
+    case "tailwind":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#38BDF8" aria-hidden="true">
+            <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.336 6.182 14.975 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.336 13.382 8.975 12 6.001 12z"/>
+        </svg>
+        break;
+
+    case "laravel":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#FF2D20" aria-hidden="true">
+            <path d="M8.7 3.2l5.8 3.3v6.7l-5.8-3.3V3.2zm6.6 4.2l5.8 3.3v6.7l-5.8-3.3V7.4zM2.9 8.2l5.8 3.3v6.7L2.9 14.9V8.2zm6.6 4.2l5.8 3.3v6.7l-5.8-3.3v-6.7z"/>
+        </svg>
+        break;
+
+    case "mysql":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#00758F" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16.5c-3.5 0-5.8-2.2-5.8-5.5 0-3.3 2.3-5.5 5.8-5.5 2.1 0 3.7.8 4.7 2.1l-1.4 1.3c-.7-.9-1.9-1.4-3.3-1.4-2.2 0-3.6 1.4-3.6 3.5s1.4 3.5 3.6 3.5c1.4 0 2.6-.5 3.3-1.4l1.4 1.3c-1 1.3-2.6 2.1-4.7 2.1z"/>
+        </svg>
+        break;
+
+    case "python":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M11.9 2c-3 0-2.8 1.3-2.8 1.3l.01 1.4h2.9v.4H6.3S4 4.8 4 7.8s2 2.9 2 2.9h1.2v-1.4c0-1.6 1.4-1.5 1.4-1.5h2.9c1.4 0 1.4-1.4 1.4-1.4V3.4S13.1 2 11.9 2zM9.5 3.3a.6.6 0 1 1 0 1.2.6.6 0 0 1 0-1.2z" fill="#3776AB"/>
+            <path d="M12.1 22c3 0 2.8-1.3 2.8-1.3l-.01-1.4h-2.9v-.4h5.7s2.3.3 2.3-2.7-2-2.9-2-2.9h-1.2v1.4c0 1.6-1.4 1.5-1.4 1.5h-2.9c-1.4 0-1.4 1.4-1.4 1.4v3.4s-.2 1.4 1 1.4zM14.5 20.7a.6.6 0 1 1 0-1.2.6.6 0 0 1 0 1.2z" fill="#FFD438"/>
+        </svg>
+        break;
+
+    case "csharp":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect width="24" height="24" rx="4" fill="#9B4993"/>
+            <path d="M11.5 16.3c-2.4 0-4-1.8-4-4.3s1.6-4.3 4-4.3c1.5 0 2.6.6 3.3 1.6l-1.3 1.1c-.5-.7-1.2-1-2-1-1.3 0-2.2 1-2.2 2.6s.9 2.6 2.2 2.6c.8 0 1.5-.4 2-1l1.3 1.1c-.7 1-1.8 1.6-3.3 1.6zm4.8-1.8h.8l.3-1.2h1.1l-.3 1.2h.8l.2-.7h-2.9zm.6-2.5h.8l.3-1.2h1.1l-.3 1.2h.8l.2-.7h-2.9z" fill="#FFFFFF"/>
+        </svg>
+        break;
+
+    case "dotnet":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect width="24" height="24" rx="4" fill="#512BD4"/>
+            <path d="M5.5 16.2V7.8h1.6l3.5 5.5V7.8h1.5v8.4h-1.5L7 10.6v5.6H5.5zm8.8 0v-8.4h4.8v1.5h-3.3v1.9h2.9v1.5h-2.9v2h3.4v1.5h-4.9zm-4.7 1.4a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z" fill="#FFFFFF"/>
+        </svg>
+        break;
+
+    case "php":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#777BB4" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-5 13.5l1.2-6.5h2.4c1.2 0 2 .5 1.8 1.7-.2 1.3-1.2 2-2.3 2H9.2l-.7 2.8H7zm5.5 0l1.2-6.5h1.7l-.4 2.2h.8c1.3 0 2 .7 1.8 1.9-.2 1.3-1.3 2.4-2.5 2.4h-2.6zm-2.8-4.5h.9c.5 0 .9-.3 1-.8.1-.5-.2-.7-.7-.7H10l-.3 1.5z"/>
+        </svg>
+        break;
+
+    case "nodejs":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#339933" aria-hidden="true">
+            <path d="M12 2l8.7 5v10L12 22l-8.7-5V7L12 2zm0 2.3L5.3 8.2v7.6L12 19.7l6.7-3.9V8.2L12 4.3zm0 4.1c1.9 0 3.4 1.5 3.4 3.4s-1.5 3.4-3.4 3.4-3.4-1.5-3.4-3.4 1.5-3.4 3.4-3.4z"/>
+        </svg>
+        break;
+
+    case "powerapps":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#742774" aria-hidden="true">
+            <path d="M12 2L3 7.2v9.6L12 22l9-5.2V7.2L12 2zm0 3.3l5.8 3.3L12 12 6.2 8.6 12 5.3zm-6.8 4.9L11 13v6.6l-5.8-3.4V10.2zm13.6 0v6.4L13 19.6V13l5.8-2.8z"/>
+        </svg>
+        break;
+
+    case "powerautomate":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#0066FF" aria-hidden="true">
+            <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 3.8l5.2 3.2L12 12.2 6.8 9 12 5.8zm-5.8 4.6L11 13.3v5.4l-4.8-3V10.4zm11.6 0v5.4L13 18.7v-5.4l4.8-2.9z"/>
+        </svg>
+        break;
+
+    case "sharepoint":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#0078D4" aria-hidden="true">
+            <circle cx="8" cy="8" r="5" fill="#038387"/>
+            <circle cx="16" cy="9" r="6" fill="#005A9E"/>
+            <circle cx="12" cy="16" r="6" fill="#107C41"/>
+        </svg>
+        break;
+
+    case "ms365":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2.5 4h9v9h-9z" fill="#F25022"/>
+            <path d="M12.5 4h9v9h-9z" fill="#7FBA00"/>
+            <path d="M2.5 14h9v9h-9z" fill="#00A4EF"/>
+            <path d="M12.5 14h9v9h-9z" fill="#FFB900"/>
+        </svg>
+        break;
+
+    case "dataverse":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#008272" aria-hidden="true">
+            <path d="M12 2L3.5 7v10L12 22l8.5-5V7L12 2zm0 3.5l5.5 3.2L12 12 6.5 8.7 12 5.5zm-6 4.7l5 3v5.6l-5-2.9v-5.7zm12 0v5.7l-5 2.9v-5.6l5-3z"/>
+        </svg>
+        break;
+
+    case "ai":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#6366F1" aria-hidden="true">
+            <path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2zm6 14l1.2 2.8L22 20l-2.8 1.2L18 24l-1.2-2.8L14 20l2.8-1.2L18 16zM6 16l1.2 2.8L10 20l-2.8 1.2L6 24l-1.2-2.8L2 20l2.8-1.2L6 16z"/>
+        </svg>
+        break;
+
+    case "vscode":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#007ACC" aria-hidden="true">
+            <path d="M17.5 2L7 12l10.5 10L22 19V5l-4.5-3zm-6 10L3 6.5v11l8.5-5.5z"/>
+        </svg>
+        break;
+
+    case "git":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#F05032" aria-hidden="true">
+            <path d="M21.7 10.9L13.1 2.3a1.5 1.5 0 0 0-2.1 0L9.1 4.2l3 3a1.7 1.7 0 0 1 2.2 2.2l2.9 2.9a1.7 1.7 0 1 1-1.1 1.1l-2.7-2.7v4.1a1.7 1.7 0 1 1-1.5 0V9.8a1.7 1.7 0 0 1-.9-.5l-3-3L2.3 11a1.5 1.5 0 0 0 0 2.1l8.6 8.6a1.5 1.5 0 0 0 2.1 0l8.7-8.7a1.5 1.5 0 0 0 0-2.1z"/>
+        </svg>
+        break;
+
+    case "github":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#24292E" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.49v-1.7c-2.78.61-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.55 2.34 1.1 2.91.84.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.13-4.56-5.02 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.04a9.4 9.4 0 0 1 5 0c1.91-1.31 2.75-1.04 2.75-1.04.55 1.4.2 2.44.1 2.7.64.71 1.03 1.62 1.03 2.73 0 3.9-2.34 4.76-4.57 5.01.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.2C22 6.58 17.52 2 12 2z"/>
+        </svg>
+        break;
+
+    case "postman":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#FF6C37" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.8 14.5l-3-3 1.4-1.4 1.6 1.6 4.8-4.8 1.4 1.4-6.2 6.2z"/>
+        </svg>
+        break;
+
+    case "docker":
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#2496ED" aria-hidden="true">
+            <path d="M13 8h2v2h-2V8zm-3 0h2v2h-2V8zm-3 0h2v2H7V8zm6-3h2v2h-2V5zm-3 0h2v2h-2V5zm-3 0h2v2H7V5zm14.5 7.5c-.4-.3-1.3-.4-2-.2-.2-.6-.6-1.1-1.1-1.5l-.6.5c.4.4.6.8.8 1.3-.5.3-1.1.7-1.4 1.3H2.8c-.4 1.5.1 3.5 1.5 4.8 2 1.9 5.3 2.3 8.3 2.3 5 0 8.7-2.3 9.4-6.2.8-.2 1.7-.7 2-1.6l-.5-.3z"/>
+        </svg>
+        break;
+
+    default:
+        <svg class="tech-svg-icon" viewBox="0 0 24 24" fill="#2563EB" aria-hidden="true">
+            <circle cx="12" cy="12" r="8"/>
+        </svg>
+        break;
+}

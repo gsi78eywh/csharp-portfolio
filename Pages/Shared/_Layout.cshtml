@@ -1,62 +1,67 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Seth Andrey Jabagat, a junior software developer focused on Microsoft Power Platform, web development, and UI/UX design." />
-    <meta name="theme-color" content="#0b1f3a" />
+    <meta name="description" content="Portfolio of Seth Andrey Jabagat — Junior Software Developer specializing in Microsoft Power Platform, full-stack web applications, and automated workflows." />
+    <meta name="theme-color" content="#f8fafc" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Seth Andrey Jabagat | Developer Portfolio" />
-    <meta property="og:description" content="Junior software developer focused on Microsoft Power Platform, web development, and practical user-centered solutions." />
+    <meta property="og:description" content="Junior Software Developer specializing in Microsoft Power Platform, full-stack web applications, and practical user-centered solutions." />
     <meta property="og:url" content="https://seth-jabagat-portfolio.onrender.com/" />
     <title>Seth Andrey Jabagat | @ViewData["Title"]</title>
     <link rel="canonical" href="https://seth-jabagat-portfolio.onrender.com/" />
     <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <script>document.documentElement.classList.add("js");</script>
     <link rel="stylesheet" href="~/css/professional.css" asp-append-version="true" />
 </head>
-<body>
+<body class="light-dashboard">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="site-header" data-header>
-        <nav class="nav-shell" aria-label="Main navigation">
-            <a class="wordmark" asp-page="/Index" aria-label="Seth's portfolio home">
-                <span class="wordmark-mark">SJ</span>
-                <span>Portfolio</span>
-            </a>
-
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span class="visually-hidden">Toggle navigation</span>
+    <!-- Mobile Top Navigation (Visible on screen < 1024px) -->
+    <header class="mobile-nav-bar" data-mobile-header>
+        <a class="mobile-brand" asp-page="/Index">
+            <span class="brand-monogram">SJ</span>
+            <span class="brand-name">Seth Andrey Jabagat</span>
+        </a>
+        <div class="mobile-nav-actions">
+            <button class="mobile-ai-trigger" type="button" data-open-ai-drawer aria-label="Open AI Assistant">
+                <span>🤖 AI</span>
             </button>
-
-            <div class="nav-links" id="site-navigation" data-menu>
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a asp-page="/Resume">Résumé</a>
-                <a class="nav-contact" href="#contact">Contact</a>
-            </div>
-        </nav>
+            <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-drawer" data-menu-button aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
-    <main id="main-content">
-        @RenderBody()
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <p>&copy; @DateTime.Now.Year Seth Andrey Jabagat</p>
-            <p>Built with C# and ASP.NET Core &middot; Deployed on Render</p>
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav-drawer" id="mobile-nav-drawer" data-menu aria-label="Mobile Navigation">
+        <div class="mobile-nav-links">
+            <a href="#about" class="mobile-nav-link"><span class="nav-idx">01</span> About</a>
+            <a href="#experience" class="mobile-nav-link"><span class="nav-idx">02</span> Experience</a>
+            <a href="#projects" class="mobile-nav-link"><span class="nav-idx">03</span> Projects</a>
+            <a href="#stack" class="mobile-nav-link"><span class="nav-idx">04</span> Stack</a>
+            <a href="#certifications" class="mobile-nav-link"><span class="nav-idx">05</span> Certifications</a>
+            <a href="#education" class="mobile-nav-link"><span class="nav-idx">06</span> Education</a>
+            <a href="#answers" class="mobile-nav-link"><span class="nav-idx">07</span> Book of Answers</a>
+            <a href="#contact" class="mobile-nav-link"><span class="nav-idx">08</span> Contact</a>
+            <a asp-page="/Resume" class="mobile-nav-link mobile-nav-link-resume"><span class="nav-idx">📄</span> View Résumé</a>
         </div>
-    </footer>
+    </nav>
+
+    <div class="site-viewport">
+        @RenderBody()
+    </div>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

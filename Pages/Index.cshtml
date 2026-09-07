@@ -4,265 +4,613 @@
     ViewData["Title"] = "Developer Portfolio";
 }
 
-<section class="hero section-shell" aria-labelledby="hero-title">
-    <div class="hero-copy reveal">
-        <p class="availability"><span aria-hidden="true"></span> Open to internships and junior developer roles</p>
-        <p class="hero-location">@Model.Location</p>
-        <h1 id="hero-title">Seth Andrey <span>Jabagat</span></h1>
-        <p class="hero-role">@Model.Role</p>
-        <p class="hero-summary">
-            Computer Technology student building practical business and community solutions with
-            Microsoft Power Platform, ASP.NET Core, Laravel, and responsive UI design.
-        </p>
-        <div class="hero-actions">
-            <a class="button button-primary" href="#projects">View selected projects</a>
-            <a class="button button-secondary" asp-page="/Resume">View résumé</a>
-            <a class="text-link" href="mailto:sethandreyabrasado@gmail.com">Email me <span aria-hidden="true">↗</span></a>
-        </div>
-        <dl class="hero-facts" aria-label="Professional profile summary">
-            <div><dt>Focus</dt><dd>Automation &amp; web solutions</dd></div>
-            <div><dt>Core platform</dt><dd>Microsoft Power Platform</dd></div>
-            <div><dt>Availability</dt><dd>Internship &amp; junior roles</dd></div>
-        </dl>
-    </div>
-
-    <div class="hero-profile reveal" aria-label="Professional capabilities summary">
-        <div class="profile-monogram" aria-hidden="true">SJ</div>
-        <div class="profile-heading">
-            <div>
-                <p>Professional toolkit</p>
-                <h2>Core capabilities</h2>
-            </div>
-            <span class="owner-badge" title="Profile summary" aria-label="Profile summary badge">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 12.5 3.1 3.1L17.5 8" /></svg>
-            </span>
-        </div>
-        <ul class="profile-capabilities" aria-label="Primary capabilities">
-            <li><span>01</span> Power Apps &amp; Power Automate</li>
-            <li><span>02</span> C# &amp; ASP.NET Core</li>
-            <li><span>03</span> Laravel &amp; MySQL</li>
-            <li><span>04</span> Responsive UI/UX</li>
-        </ul>
-        <div class="profile-status"><i aria-hidden="true"></i> Available for opportunities</div>
-    </div>
-</section>
-
-<div class="capability-bar" aria-label="Professional capabilities">
-    <div class="section-shell">
-        <span>Microsoft Power Platform</span>
-        <span>Workflow Automation</span>
-        <span>ASP.NET Core</span>
-        <span>UI/UX Design</span>
-        <span>Cloud Deployment</span>
-    </div>
-</div>
-
-<section class="about section-shell section-block" id="about" aria-labelledby="about-title">
-    <div class="section-heading reveal">
-        <p class="section-label">01 · Profile</p>
-        <h2 id="about-title">Technology that solves a clear problem.</h2>
-    </div>
-    <div class="about-content reveal">
-        <p class="lead">
-            I translate workflow and community needs into simple, usable digital products.
-        </p>
-        <p>
-            My experience spans Microsoft low-code solutions, full-stack school projects, responsive interfaces,
-            and cloud deployment. I value clear communication, thoughtful design, and reliable execution.
-        </p>
-        <ul class="value-list" aria-label="Professional strengths">
-            <li><strong>User-centered</strong><span>Interfaces designed for clarity and accessibility.</span></li>
-            <li><strong>Process-minded</strong><span>Workflows organized around real operating needs.</span></li>
-            <li><strong>Team-ready</strong><span>Collaborative, adaptable, and committed to learning.</span></li>
-        </ul>
-    </div>
-</section>
-
-<section class="education section-block" id="education" aria-labelledby="education-title">
-    <div class="section-shell">
-        <div class="section-heading section-heading-row reveal">
-            <div>
-                <p class="section-label">02 · Education</p>
-                <h2 id="education-title">Academic foundation.</h2>
-            </div>
-            <p>Formal studies and scholarship training supporting my software development practice.</p>
-        </div>
-
-        <div class="education-grid">
-            @for (var index = 0; index < Model.Education.Count; index++)
-            {
-                var education = Model.Education[index];
-                <a class="education-card reveal"
-                   href="@education.WebsiteUrl"
-                   target="_blank"
-                   rel="noreferrer"
-                   aria-label="Visit the official website of @education.School">
-                    <div class="education-logo-wrap">
-                        <img class="education-logo @(education.UseContainedImage ? "education-logo--contain" : null)"
-                             src="@education.ImagePath"
-                             alt="@education.ImageAlt"
-                             loading="lazy"
-                             decoding="async" />
+<div class="portfolio-dashboard" id="main-content">
+    
+    <!-- LEFT SIDEBAR: Profile & 9-Item Monospace Navigation -->
+    <aside class="dashboard-col left-sidebar" aria-label="Profile and Navigation">
+        <div class="sidebar-inner">
+            <div class="sidebar-top">
+                <div class="profile-card">
+                    <div class="avatar-frame">
+                        <img src="~/images/profile.jpg" asp-append-version="true" alt="Seth Andrey Jabagat - Software Developer" class="avatar-img" />
                     </div>
-                    <div class="education-card-content">
-                        <span class="card-number">@((index + 1).ToString("00"))</span>
-                        <p>@education.Period</p>
-                        <h3>@education.Program</h3>
-                        <span class="education-school">@education.School</span>
-                        <span class="card-link">Visit institution <b aria-hidden="true">↗</b></span>
+                    <div class="profile-meta">
+                        <h1 class="profile-name">
+                            Seth Andrey Jabagat
+                            <span class="verified-badge" title="Verified Developer Profile" aria-label="Verified">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </span>
+                        </h1>
+                        <p class="profile-location">
+                            <svg class="icon-pin" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                            </svg>
+                            Dalaguete, Cebu, Philippines
+                        </p>
+                        <p class="profile-bio">
+                            Junior Software Developer focused on Microsoft Power Platform, full-stack web development, and practical workflow automation.
+                        </p>
                     </div>
-                </a>
-            }
-        </div>
-    </div>
-</section>
 
-<section class="skills section-block" id="skills" aria-labelledby="skills-title">
-    <div class="section-shell">
-        <div class="section-heading section-heading-row reveal">
-            <div>
-                <p class="section-label">03 · Capabilities</p>
-                <h2 id="skills-title">Focused tools for delivery.</h2>
-            </div>
-            <p>A practical stack for Microsoft workflows, responsive applications, data, and deployment.</p>
-        </div>
-
-        <div class="stack-grid">
-            @for (var index = 0; index < Model.TechStack.Count; index++)
-            {
-                var group = Model.TechStack[index];
-                <article class="stack-card reveal">
-                    <div class="stack-card-heading">
-                        <span>@((index + 1).ToString("00"))</span>
-                        <h3>@group.Category</h3>
+                    <!-- AI Assistant Left-Sidebar Quick Trigger (Matching Reference Structure) -->
+                    <div class="sidebar-ai-cta-wrap">
+                        <button type="button" class="sidebar-ai-btn" data-open-ai-drawer aria-label="Open AI Assistant (Alt + K)">
+                            <span class="sidebar-ai-btn-left">
+                                <span class="sidebar-ai-btn-icon">🤖</span>
+                                <span class="sidebar-ai-btn-label">Ask AI Assistant</span>
+                            </span>
+                            <kbd class="key-badge">Alt + K</kbd>
+                        </button>
                     </div>
-                    <ul>
-                        @foreach (string skill in group.Skills)
-                        {
-                            <li>@skill</li>
-                        }
-                    </ul>
-                </article>
-            }
-        </div>
-
-        <div class="training reveal" aria-labelledby="training-title">
-            <div>
-                <p class="section-label">Training</p>
-                <h3 id="training-title">Continued professional learning</h3>
-            </div>
-            <ul>
-                @foreach (string certification in Model.Certifications)
-                {
-                    <li>@certification</li>
-                }
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="projects section-shell section-block" id="projects" aria-labelledby="projects-title">
-    <div class="section-heading section-heading-row reveal">
-        <div>
-            <p class="section-label">04 · Selected work</p>
-            <h2 id="projects-title">Projects with a purpose.</h2>
-        </div>
-        <p>Academic, company, and community work focused on useful outcomes and clear user experiences.</p>
-    </div>
-
-    <div class="project-grid">
-        @for (var index = 0; index < Model.Projects.Count; index++)
-        {
-            var project = Model.Projects[index];
-            <article class="project-card reveal">
-                <div class="project-header">
-                    <span class="project-number">@((index + 1).ToString("00"))</span>
-                    <span class="project-status">@project.Status</span>
                 </div>
-                <p class="project-period">@project.Period</p>
-                <h3>@project.Title</h3>
-                <p class="project-description">@project.Description</p>
-                <ul aria-label="Technologies used for @project.Title">
-                    @foreach (string technology in project.Technologies)
-                    {
-                        <li>@technology</li>
-                    }
-                </ul>
-                @if (!string.IsNullOrWhiteSpace(project.RepositoryUrl))
+
+                <!-- Monospace 9-Item Numbered Navigation -->
+                <nav class="sidebar-nav" aria-label="Sections">
+                    <ul class="nav-mono-list" id="sidebar-nav-list">
+                        <li><a href="#about" class="nav-mono-link active" data-section="about"><span class="nav-num">01</span><span class="nav-sep">—</span><span class="nav-label">about</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#experience" class="nav-mono-link" data-section="experience"><span class="nav-num">02</span><span class="nav-sep">—</span><span class="nav-label">experience</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#projects" class="nav-mono-link" data-section="projects"><span class="nav-num">03</span><span class="nav-sep">—</span><span class="nav-label">projects</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#stack" class="nav-mono-link" data-section="stack"><span class="nav-num">04</span><span class="nav-sep">—</span><span class="nav-label">stack</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#certifications" class="nav-mono-link" data-section="certifications"><span class="nav-num">05</span><span class="nav-sep">—</span><span class="nav-label">certifications</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#recommendations" class="nav-mono-link" data-section="recommendations"><span class="nav-num">06</span><span class="nav-sep">—</span><span class="nav-label">recommendations</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#courses" class="nav-mono-link" data-section="courses"><span class="nav-num">07</span><span class="nav-sep">—</span><span class="nav-label">courses</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#answers" class="nav-mono-link" data-section="answers"><span class="nav-num">08</span><span class="nav-sep">—</span><span class="nav-label">book of answers</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#contact" class="nav-mono-link" data-section="contact"><span class="nav-num">09</span><span class="nav-sep">—</span><span class="nav-label">contact</span><span class="nav-indicator"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Bottom Schedule a Call Action Button -->
+            <div class="sidebar-bottom">
+                <a href="mailto:sethandreyabrasado@gmail.com?subject=Schedule%20a%20Call%20with%20Seth" class="schedule-call-btn" aria-label="Schedule a call with Seth">
+                    <span class="btn-cal-icon">📅</span>
+                    <span>Schedule a Call</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CENTER COLUMN: Separately Scrollable Main Content Stream -->
+    <main class="dashboard-col center-stream" id="center-stream">
+        
+        <!-- 01 // ABOUT SECTION (Balanced, Realistic & Professional) -->
+        <section class="section-card about-hero-card" id="about" aria-labelledby="about-heading">
+            <div class="card-meta-header">
+                <span class="section-code">01 // ABOUT <span class="dot-accent">•</span></span>
+                <span class="location-tag">Cebu, PH</span>
+            </div>
+
+            <h2 class="hero-display-title" id="about-heading">
+                Junior Software Developer building practical web solutions &amp; automated workflows.
+            </h2>
+
+            <div class="hero-body-text">
+                <p>
+                    Hi, I'm <strong>Seth Andrey Jabagat</strong> — a junior developer and Computer Technology student based in Cebu, Philippines. I focus on building practical tools with <strong>Microsoft Power Platform</strong> (Power Apps, Power Automate, SharePoint) and full-stack web applications using <strong>C# / ASP.NET Core</strong>, <strong>PHP / Laravel</strong>, and <strong>React</strong>.
+                </p>
+                <p>
+                    I enjoy creating reliable solutions that automate everyday tasks, organize data with clean databases, and provide friendly, responsive user experiences.
+                </p>
+                <p class="hero-availability-callout">
+                    Open for <strong>Internship</strong> and <strong>Junior Software Developer</strong> opportunities where I can learn, contribute to a team, and grow.
+                </p>
+            </div>
+
+            <div class="hero-outlinks-row">
+                <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer" class="outlink-pill">
+                    <span>github</span> <span class="arrow-glyph">↗</span>
+                </a>
+                <a href="https://www.linkedin.com/in/seth-andrey-abrasado-868419366/" target="_blank" rel="noreferrer" class="outlink-pill">
+                    <span>linkedin</span> <span class="arrow-glyph">↗</span>
+                </a>
+                <a href="mailto:sethandreyabrasado@gmail.com" class="outlink-pill">
+                    <span>email</span> <span class="arrow-glyph">↗</span>
+                </a>
+                <a href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer" class="outlink-pill">
+                    <span>teams</span> <span class="arrow-glyph">↗</span>
+                </a>
+                <a asp-page="/Resume" class="outlink-pill resume-pill">
+                    <span>résumé</span> <span class="arrow-glyph">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- STAT METRICS GRID: 4 Horizontal Cards with Dynamic Project Count -->
+        <div class="metrics-grid" aria-label="Key Highlights">
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-icon">🖥️</span>
+                    <span class="metric-tag">DEVELOPMENT FOCUS</span>
+                </div>
+                <div class="metric-value">2+ Yrs</div>
+                <div class="metric-sub">Hands-on student &amp; project practice</div>
+            </article>
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-icon">🚀</span>
+                    <span class="metric-tag">SHIPPED &amp; DEPLOYED</span>
+                </div>
+                <div class="metric-value">@Model.ShippedProjectsCount Projects</div>
+                <div class="metric-sub">@Model.RepositoriesCount public repos &amp; team solutions</div>
+            </article>
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-icon">&lt;/&gt;</span>
+                    <span class="metric-tag">CORE TECH STACK</span>
+                </div>
+                <div class="metric-value">15+ Tech</div>
+                <div class="metric-sub">Power Platform, C#, Laravel, React</div>
+            </article>
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-icon">☀️</span>
+                    <span class="metric-tag">CERTIFIED TRAINING</span>
+                </div>
+                <div class="metric-value">6+ Certs</div>
+                <div class="metric-sub">Google Data, UI/UX, Python Automation</div>
+            </article>
+        </div>
+
+        <!-- 02 // EXPERIENCE SECTION -->
+        <section class="section-card" id="experience" aria-labelledby="experience-heading">
+            <div class="card-meta-header">
+                <span class="section-code">02 // EXPERIENCE <span class="dot-accent">•</span></span>
+                <span class="location-tag">Track Record</span>
+            </div>
+            <h3 class="section-subheading" id="experience-heading">Learning through real contribution &amp; delivery.</h3>
+
+            <div class="timeline-container">
+                @foreach (var exp in Model.Experience)
                 {
-                    <a class="project-link" href="@project.RepositoryUrl" target="_blank" rel="noreferrer">
-                        View GitHub repository <span aria-hidden="true">↗</span>
+                    <article class="timeline-card">
+                        <div class="timeline-period-badge">@exp.Period</div>
+                        <h4 class="timeline-role">@exp.Role</h4>
+                        <p class="timeline-desc">@exp.Description</p>
+                    </article>
+                }
+            </div>
+        </section>
+
+        <!-- 03 // PROJECTS SECTION (Clear, Direct Captions) -->
+        <section class="section-card" id="projects" aria-labelledby="projects-heading">
+            <div class="card-meta-header">
+                <span class="section-code">03 // PROJECTS <span class="dot-accent">•</span></span>
+                <span class="location-tag">Selected Work</span>
+            </div>
+            <h3 class="section-subheading" id="projects-heading">Systems engineered for real community &amp; business impact.</h3>
+
+            <div class="projects-display-grid">
+                @for (var index = 0; index < Model.Projects.Count; index++)
+                {
+                    var proj = Model.Projects[index];
+                    <article class="project-box">
+                        <div class="project-box-header">
+                            <span class="project-idx">@((index + 1).ToString("00"))</span>
+                            <span class="project-badge status-@proj.Status.ToLower().Replace(" ", "-")">@proj.Status</span>
+                        </div>
+                        <div class="project-period-txt">@proj.Period</div>
+                        <h4 class="project-box-title">@proj.Title</h4>
+                        <p class="project-box-desc">@proj.Description</p>
+                        
+                        <div class="project-tags-list">
+                            @foreach (var tech in proj.Technologies)
+                            {
+                                <span class="tech-pill">@tech</span>
+                            }
+                        </div>
+
+                        <div class="project-box-footer">
+                            @if (!string.IsNullOrWhiteSpace(proj.RepositoryUrl))
+                            {
+                                <a href="@proj.RepositoryUrl" target="_blank" rel="noreferrer" class="project-code-link">
+                                    <span>View GitHub repository</span> <span class="arrow-glyph">↗</span>
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="project-internal-tag">Enterprise / Internal Solution</span>
+                            }
+                        </div>
+                    </article>
+                }
+            </div>
+        </section>
+
+        <!-- 04 // TECH STACK (Space-Saving Interactive Pills with Clickable % Display) -->
+        <section class="section-card" id="stack" aria-labelledby="stack-heading">
+            <div class="card-meta-header">
+                <span class="section-code">04 // TECH STACK <span class="dot-accent">•</span></span>
+                <div class="stack-meta-tools">
+                    <span class="stack-action-hint">Click pill to reveal %</span>
+                    <button type="button" class="btn-toggle-all-pct" id="btn-toggle-all-pct" title="Toggle all percentages">
+                        <span class="pct-toggle-text">Show All %</span>
+                        <span class="pct-toggle-icon">⚡</span>
+                    </button>
+                </div>
+            </div>
+            <h3 class="section-subheading" id="stack-heading">Core technical stack &amp; hands-on proficiency.</h3>
+
+            <div class="tech-stack-pills-layout">
+                @foreach (var category in Model.RatedSkills)
+                {
+                    <div class="tech-category-group">
+                        <h4 class="tech-category-heading">@category.Category.ToUpperInvariant()</h4>
+                        <div class="tech-pills-row">
+                            @foreach (var skill in category.Skills)
+                            {
+                                <button type="button" 
+                                        class="tech-pill-btn" 
+                                        data-skill-name="@skill.Name"
+                                        data-skill-pct="@skill.Percentage"
+                                        data-skill-rating="@skill.Rating"
+                                        data-skill-level="@skill.Level"
+                                        data-skill-desc="@skill.Description"
+                                        title="@skill.Name: @skill.Percentage% (@skill.Rating/10) &bull; @skill.Level"
+                                        aria-label="@skill.Name @skill.Percentage% proficiency">
+                                    <span class="tech-pill-icon">
+                                        @await Html.PartialAsync("_SkillIcon", skill.IconKey)
+                                    </span>
+                                    <span class="tech-pill-label">@skill.Name</span>
+                                    <span class="tech-pill-pct-chip">@skill.Percentage%</span>
+                                </button>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Active Skill Highlight Bar (Shown when pill clicked) -->
+            <div class="skill-detail-toast" id="skill-detail-toast" style="display: none;" aria-live="polite">
+                <div class="toast-left">
+                    <span class="toast-pct-badge" id="toast-pct-badge">90%</span>
+                    <div class="toast-meta">
+                        <div class="toast-title-row">
+                            <strong class="toast-name" id="toast-name">Power Apps</strong>
+                            <span class="toast-level" id="toast-level">Advanced (9/10)</span>
+                        </div>
+                        <p class="toast-desc" id="toast-desc">Custom Canvas &amp; Model-driven applications with responsive multi-screen UX</p>
+                    </div>
+                </div>
+                <div class="toast-track">
+                    <div class="toast-fill" id="toast-fill" style="width: 90%;"></div>
+                </div>
+                <button type="button" class="toast-close" id="toast-close" aria-label="Close detail">✕</button>
+            </div>
+        </section>
+
+        <!-- 05 // CERTIFICATIONS SECTION -->
+        <section class="section-card" id="certifications" aria-labelledby="certs-heading">
+            <div class="card-meta-header">
+                <span class="section-code">05 // CERTIFICATIONS <span class="dot-accent">•</span></span>
+                <span class="location-tag meta-action-link">Verified Credentials</span>
+            </div>
+
+            <div class="certs-cards-grid">
+                <div class="cert-feature-card">
+                    <div class="cert-card-top">
+                        <span class="cert-track">Python / Automation</span>
+                        <span class="cert-verified-icon">✓</span>
+                    </div>
+                    <h4 class="cert-card-title">Using Python to Interact with the Operating System</h4>
+                    <span class="cert-card-issuer">Google / Coursera</span>
+                </div>
+
+                <div class="cert-feature-card">
+                    <div class="cert-card-top">
+                        <span class="cert-track">Programming</span>
+                        <span class="cert-verified-icon">✓</span>
+                    </div>
+                    <h4 class="cert-card-title">Crash Course on Python</h4>
+                    <span class="cert-card-issuer">Google / Coursera</span>
+                </div>
+
+                <div class="cert-feature-card">
+                    <div class="cert-card-top">
+                        <span class="cert-track">Data Analytics</span>
+                        <span class="cert-verified-icon">✓</span>
+                    </div>
+                    <h4 class="cert-card-title">Google Data Analytics Professional Specialization</h4>
+                    <span class="cert-card-issuer">Google Career Certificates</span>
+                </div>
+
+                <div class="cert-feature-card">
+                    <div class="cert-card-top">
+                        <span class="cert-track">Design &amp; UI/UX</span>
+                        <span class="cert-verified-icon">✓</span>
+                    </div>
+                    <h4 class="cert-card-title">Google UI/UX Design Fundamentals</h4>
+                    <span class="cert-card-issuer">Google / Coursera</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 // RECOMMENDATIONS & EDUCATION -->
+        <section class="section-card" id="recommendations" aria-labelledby="rec-heading">
+            <div class="card-meta-header">
+                <span class="section-code">06 // RECOMMENDATIONS &amp; EDUCATION <span class="dot-accent">•</span></span>
+                <span class="location-tag">Academic Roots</span>
+            </div>
+            <h3 class="section-subheading" id="rec-heading">Academic foundation &amp; scholarship technology training.</h3>
+
+            <div class="education-cards-grid">
+                @for (var index = 0; index < Model.Education.Count; index++)
+                {
+                    var edu = Model.Education[index];
+                    <a href="@edu.WebsiteUrl" target="_blank" rel="noreferrer" class="edu-link-card">
+                        <div class="edu-logo-box">
+                            <img src="@edu.ImagePath" alt="@edu.ImageAlt" class="edu-logo-img @(edu.UseContainedImage ? "contain-img" : "")" />
+                        </div>
+                        <div class="edu-details">
+                            <div class="edu-period">@edu.Period</div>
+                            <h4 class="edu-program">@edu.Program</h4>
+                            <p class="edu-school">@edu.School</p>
+                            <span class="edu-visit">Visit Institution <span class="arrow-glyph">↗</span></span>
+                        </div>
                     </a>
                 }
-                else
+            </div>
+        </section>
+
+        <!-- 07 // COURSES SECTION -->
+        <section class="section-card" id="courses" aria-labelledby="courses-heading">
+            <div class="card-meta-header">
+                <span class="section-code">07 // COURSES &amp; TRAINING <span class="dot-accent">•</span></span>
+                <span class="location-tag">Continuous Growth</span>
+            </div>
+            <h3 class="section-subheading" id="courses-heading">Curated technical training &amp; skill accelerators.</h3>
+
+            <div class="courses-list-grid">
+                @foreach (var cert in Model.Certifications)
                 {
-                    <span class="project-private">Repository not public</span>
+                    <div class="course-list-item">
+                        <div class="course-idx-bullet">▸</div>
+                        <div class="course-body">
+                            <h4 class="course-name">@cert</h4>
+                            <span class="course-tag">Completed &amp; Validated</span>
+                        </div>
+                    </div>
                 }
-            </article>
-        }
+            </div>
+        </section>
+
+        <!-- 08 // BOOK OF ANSWERS & DAILY PERSPECTIVE -->
+        <section class="section-card" id="answers" aria-labelledby="answers-heading">
+            <div class="card-meta-header">
+                <span class="section-code">08 // BOOK OF ANSWERS <span class="dot-accent">•</span></span>
+                <span class="location-tag">Philosophy &amp; Insights</span>
+            </div>
+            <h3 class="section-subheading" id="answers-heading">Daily perspective &amp; developer knowledge base.</h3>
+
+            <!-- Daily Quote Card -->
+            <div class="daily-quote-card">
+                <div class="quote-header">
+                    <span class="quote-badge">💡 Daily Perspective</span>
+                    <span class="quote-timestamp">Updated Daily</span>
+                </div>
+                <blockquote class="quote-text-block">
+                    “@Model.Quote.Text”
+                </blockquote>
+                <footer class="quote-author-row">
+                    <span class="quote-author">— @Model.Quote.Author</span>
+                    @if (Model.Quote.IsFromApi)
+                    {
+                        <span class="quote-source">Synced via ZenQuotes API</span>
+                    }
+                </footer>
+            </div>
+
+            <!-- Interactive Quick FAQ Accordion -->
+            <div class="interactive-faq-block">
+                <h4 class="faq-section-title">Developer Quick Insights</h4>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary class="faq-question">What problems do you love solving most?</summary>
+                        <div class="faq-answer">
+                            I thrive on automating tedious, repetitive workflows and architecting clean digital interfaces that make complex data and operations simple for everyday users.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">What is your primary development workflow?</summary>
+                        <div class="faq-answer">
+                            I balance low-code agility (Power Apps, Power Automate, SharePoint) for rapid business process delivery with robust full-stack engineering (C#, ASP.NET Core, Laravel, MySQL) for bespoke web platforms.
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Are you available for internships or developer roles?</summary>
+                        <div class="faq-answer">
+                            Yes! I am actively open to internships, junior software engineer, and Power Platform developer positions where I can contribute and learn alongside a team.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 09 // CONTACT SECTION -->
+        <section class="section-card contact-card" id="contact" aria-labelledby="contact-heading">
+            <!-- 09 // CONTACT SECTION (Compact, Proportional Buttons) -->
+            <div class="card-meta-header">
+                <span class="section-code">09 // CONTACT <span class="dot-accent">•</span></span>
+                <span class="location-tag">Get in Touch</span>
+            </div>
+            <h3 class="section-subheading" id="contact-heading">Let’s connect on opportunities and projects.</h3>
+
+            <p class="contact-lead-text">
+                Whether you have an internship opening, junior developer role, or want to discuss a project collaboration, my inbox and direct channels are always open.
+            </p>
+
+            <div class="contact-actions-row">
+                <a href="mailto:sethandreyabrasado@gmail.com" class="contact-btn-primary" aria-label="Send email to Seth">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="contact-btn-icon">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>Send Email</span>
+                </a>
+                <a href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer" class="contact-btn-secondary" aria-label="Message Seth on Teams">
+                    <span class="teams-icon">T</span>
+                    <span>Chat on Teams</span>
+                </a>
+                <span class="contact-direct-address" title="Direct Email Address">
+                    sethandreyabrasado@gmail.com
+                </span>
+            </div>
+
+            <div class="social-channels-row">
+                <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer" class="channel-link">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/seth-andrey-abrasado-868419366/" target="_blank" rel="noreferrer" class="channel-link">LinkedIn ↗</a>
+                <a href="https://www.facebook.com/profile.php?id=61582551204852" target="_blank" rel="noreferrer" class="channel-link">Facebook ↗</a>
+                <a asp-page="/Resume" class="channel-link">View Résumé ↗</a>
+            </div>
+        </section>
+
+        <!-- Stream Footer -->
+        <footer class="stream-footer">
+            <p>&copy; @DateTime.Now.Year Seth Andrey Jabagat &middot; Built with C# &amp; ASP.NET Core &middot; Deployed on Render</p>
+        </footer>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR: Recruiter Snapshot, Interactive AI Assistant, & Focus Area -->
+    <aside class="dashboard-col right-sidebar" aria-label="Candidate Snapshot and AI Assistant">
+        <div class="sidebar-inner">
+
+            <!-- ORIGINAL RECRUITER QUICK SNAPSHOT (Bespoke HR overview, NOT generic server status) -->
+            <section class="widget-card snapshot-widget" aria-labelledby="snapshot-widget-title">
+                <div class="widget-header">
+                    <span class="widget-title" id="snapshot-widget-title">
+                        <span class="widget-title-glyph">💼</span> CANDIDATE PROFILE
+                    </span>
+                    <span class="status-badge available-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Open to Work</span>
+                    </span>
+                </div>
+                <div class="status-kv-list">
+                    <div class="status-row">
+                        <span class="status-key">Role:</span>
+                        <span class="status-val role-highlight">Junior Dev &middot; Power Platform</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-key">Education:</span>
+                        <span class="status-val">ACT '26 &middot; USJ-R Scholar</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-key">Location:</span>
+                        <span class="status-val">Cebu, PH (Hybrid / Remote)</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-key">Status:</span>
+                        <span class="status-val text-accent">Immediate &middot; Open to Roles</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-key">Local Time:</span>
+                        <span class="status-val live-time" id="live-pht-clock">PHT (GMT+8)</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-key">Response:</span>
+                        <span class="status-val">&lt; 24 Hours</span>
+                    </div>
+                </div>
+                <div class="snapshot-quick-footer">
+                    <a asp-page="/Resume" class="snapshot-resume-link">View Full Qualifications &amp; Résumé &rarr;</a>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE AI ASSISTANT WIDGET (Compact, inline Alt+K) -->
+            <section class="widget-card ai-assistant-widget" aria-label="Portfolio AI Assistant">
+                <div class="ai-widget-header">
+                    <div class="ai-widget-header-top">
+                        <div class="ai-title-row">
+                            <span class="ai-widget-icon">🤖</span>
+                            <h3 class="ai-widget-title">Ask AI Assistant</h3>
+                        </div>
+                        <kbd class="key-badge">Alt + K</kbd>
+                    </div>
+                    <span class="ai-widget-sub">Trained on Seth's background &amp; skills</span>
+                </div>
+                <p class="ai-widget-desc">Ask anything about technical skills, projects, or background.</p>
+                <div class="ai-widget-prompt-chips">
+                    <button type="button" class="prompt-chip" data-prompt="What are Seth's primary skills?">Skills</button>
+                    <button type="button" class="prompt-chip" data-prompt="Tell me about Seth's projects">Projects</button>
+                    <button type="button" class="prompt-chip" data-prompt="How can I contact or hire Seth?">Contact</button>
+                </div>
+                <form class="ai-widget-quick-form" id="ai-widget-form" autocomplete="off">
+                    <input type="text" id="ai-widget-input" class="ai-widget-input" placeholder="Ask AI a question..." />
+                    <button type="submit" class="ai-widget-send-btn" aria-label="Send query">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </form>
+                <button type="button" class="ai-open-full-btn" data-open-ai-drawer>
+                    <span>Open full assistant dialog</span>
+                    <span class="arrow-glyph">↗</span>
+                </button>
+            </section>
+
+            <!-- CURRENTLY FOCUSED ON WIDGET (Realistic & Grounded) -->
+            <section class="widget-card focus-widget" aria-labelledby="focus-widget-title">
+                <div class="widget-header">
+                    <span class="widget-title-icon">❖</span>
+                    <span class="widget-title-focused" id="focus-widget-title">Currently Focused On</span>
+                </div>
+                <ul class="focus-list">
+                    <li><span class="arrow-focus">▸</span> Microsoft Power Platform &amp; Flows</li>
+                    <li><span class="arrow-focus">▸</span> Full-Stack Web: C# .NET, Laravel &amp; React</li>
+                    <li><span class="arrow-focus">▸</span> Clean Database Design &amp; RESTful APIs</li>
+                </ul>
+            </section>
+
+            <!-- AI DRAWER HINT -->
+            <div class="ai-drawer-shortcut-hint">
+                <span>Press</span> <kbd>Alt + K</kbd> <span>for AI Drawer</span>
+            </div>
+
+        </div>
+    </aside>
+
+</div>
+
+<!-- AI ASSISTANT SLIDE-OVER DRAWER MODAL -->
+<div class="ai-drawer-overlay" id="ai-drawer-overlay" aria-hidden="true">
+    <div class="ai-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="ai-drawer-title">
+        <header class="ai-drawer-header">
+            <div class="ai-header-left">
+                <span class="ai-avatar-icon">🤖</span>
+                <div>
+                    <h3 id="ai-drawer-title" class="ai-drawer-heading">Seth's Portfolio AI</h3>
+                    <span class="ai-status-indicator"><span class="dot-online"></span> Ready to assist</span>
+                </div>
+            </div>
+            <button type="button" class="ai-close-btn" id="ai-drawer-close" aria-label="Close AI Drawer">✕</button>
+        </header>
+
+        <div class="ai-chat-messages" id="ai-chat-messages">
+            <div class="ai-msg ai-msg-bot">
+                <div class="ai-bubble">
+                    Hello! I am Seth's AI portfolio guide. How can I help you explore his skills, projects, background, or availability?
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-quick-prompts" id="ai-quick-prompts">
+            <button type="button" class="prompt-chip" data-prompt="What are Seth's primary skills?">Primary Skills</button>
+            <button type="button" class="prompt-chip" data-prompt="Tell me about Seth's projects">Projects</button>
+            <button type="button" class="prompt-chip" data-prompt="What is Seth's background and education?">Education</button>
+            <button type="button" class="prompt-chip" data-prompt="How can I contact or hire Seth?">Contact / Hire</button>
+        </div>
+
+        <form class="ai-input-form" id="ai-input-form" autocomplete="off">
+            <input type="text" id="ai-user-query" class="ai-text-input" placeholder="Ask anything about Seth..." />
+            <button type="submit" class="ai-send-btn" aria-label="Send query">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </form>
     </div>
-</section>
-
-<section class="experience section-block" id="experience" aria-labelledby="experience-title">
-    <div class="section-shell experience-layout">
-        <div class="section-heading reveal">
-            <p class="section-label">05 · Experience</p>
-            <h2 id="experience-title">Learning through contribution.</h2>
-            <p>Community, industry, and collaborative development experiences.</p>
-        </div>
-
-        <div class="timeline">
-            @foreach (var experience in Model.Experience)
-            {
-                <article class="timeline-item reveal">
-                    <p>@experience.Period</p>
-                    <h3>@experience.Role</h3>
-                    <span>@experience.Description</span>
-                </article>
-            }
-        </div>
-    </div>
-</section>
-
-<section class="motivation section-shell" aria-labelledby="motivation-title">
-    <div class="quote-card reveal">
-        <div>
-            <p class="section-label" id="motivation-title">Daily perspective</p>
-            <span class="quote-update">Updated daily</span>
-        </div>
-        <blockquote>
-            <p>“@Model.Quote.Text”</p>
-            <footer>— @Model.Quote.Author</footer>
-        </blockquote>
-        @if (Model.Quote.IsFromApi)
-        {
-            <a class="quote-credit" href="https://zenquotes.io/" target="_blank" rel="noreferrer">Quote provided by ZenQuotes API</a>
-        }
-        else
-        {
-            <span class="quote-credit">Saved quote shown while the daily service reconnects.</span>
-        }
-    </div>
-</section>
-
-<section class="contact section-block" id="contact" aria-labelledby="contact-title">
-    <div class="contact-inner section-shell reveal">
-        <p class="section-label">06 · Contact</p>
-        <h2 id="contact-title">Let’s discuss how I can contribute.</h2>
-        <p>I’m available for internships, junior roles, and project opportunities in Microsoft solutions and web development.</p>
-        <div class="contact-actions">
-            <a class="button button-light" href="mailto:sethandreyabrasado@gmail.com">Send an email</a>
-            <a class="button button-outline-light" href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer">Chat on Teams</a>
-        </div>
-        <div class="social-links" aria-label="Professional profiles">
-            <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/seth-andrey-abrasado-868419366/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="https://www.facebook.com/profile.php?id=61582551204852" target="_blank" rel="noreferrer">Facebook ↗</a>
-        </div>
-    </div>
-</section>
-
-<a class="teams-support" href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer" aria-label="Chat with Seth on Microsoft Teams">
-    <span aria-hidden="true">T</span>
-    <strong>Teams chat</strong>
-</a>
+</div>
