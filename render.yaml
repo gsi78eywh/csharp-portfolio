@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: sethandreyjabagat-portfolio
+    name: seth-jabagat-portfolio
     runtime: docker
     plan: free
     region: singapore
@@ -10,7 +10,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: PORTFOLIO_RELEASE
-        value: "2026.08.25-project-refresh"
+        value: "2026.09.07-professional-refresh"
       - key: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
         value: "false"
       - key: DOTNET_USE_POLLING_FILE_WATCHER
