@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initMobileNav();
     initTechPills();
     initCopyEmail();
+    initPreviewModal();
 });
 
 /* --------------------------------------------------------------------------
@@ -93,10 +94,17 @@ function initTerminal() {
             "4. REACH System [Community SMS Relief Automation]",
 
         experience: () =>
-            "Experience:\n" +
-            "• Youth Empowerment Participant (2025 – Present)\n" +
-            "• Industry Learning: Accenture & AI Talks (2026)\n" +
-            "• Alliance Student Developer (2025)",
+            "Work & Internship Experience:\n" +
+            "1. Ramon Aboitiz Foundation Inc. [6 Months Internship]\n" +
+            "   Role: Software Developer — Microsoft Platforms Developer\n" +
+            "   Projects: Seat Booking App (Full-Stack/Power Platform), Activity Proposal Backend Support, VPIN, User Manual Support\n" +
+            "   Link: https://rafi.org.ph/\n\n" +
+            "2. Oasis Infobyte [1 Month Internship]\n" +
+            "   Role: Application Developer Intern\n" +
+            "   Projects: Todo App, Stopwatch, Quiz App, Unit Converter\n" +
+            "   Stack: Java, Android Studio, XML, Supabase, SQLite, JS (AI-Assisted Coding)\n" +
+            "   GitHub: https://github.com/gsi78eywh/OIBSIP\n" +
+            "   Company Link: https://oasisinfobyte.com/",
 
         education: () =>
             "Education:\n" +
@@ -184,10 +192,8 @@ function initScrollspy() {
         "about",
         "experience",
         "projects",
-        "stack",
-        "certifications",
-        "recommendations",
-        "courses",
+        "credentials",
+        "education",
         "answers",
         "contact"
     ];
@@ -427,6 +433,19 @@ function initAiDrawer() {
                     "• 9/10 (Advanced / Expert): Power Apps, Power Automate, SharePoint, HTML5, CSS3, AI & Agent-Assisted Dev, VS Code\n" +
                     "• 8/10 (Proficient): React, TypeScript, Tailwind CSS, Laravel, MySQL, Python, Microsoft 365, Git & GitHub, Postman\n" +
                     "• 7/10 (Skilled): C#, .NET / ASP.NET Core, PHP, Node.js, Dataverse, Docker & Cloud";
+            } else if (q.includes("intern") || q.includes("experience") || q.includes("foundation") || q.includes("oasis") || q.includes("rafi")) {
+                reply = "Seth's work & internship experience:\n\n" +
+                    "1. Ramon Aboitiz Foundation Inc. (6 Months Internship) — Software Developer (Microsoft Platforms):\n" +
+                    "   • Built internal Seat Booking App (Full-Stack / Power Platform Developer)\n" +
+                    "   • Activity Proposal System (Backend Developer Support)\n" +
+                    "   • VPIN initiative developer support & technical user manual documentation\n" +
+                    "   • Official website: https://rafi.org.ph/\n\n" +
+                    "2. Oasis Infobyte (1 Month Internship) — Application Developer Intern:\n" +
+                    "   • Developed Todo App, Stopwatch, Quiz App, and Unit Converter\n" +
+                    "   • Technologies: Java, Android Studio, XML, Supabase, SQLite, JavaScript\n" +
+                    "   • GitHub Repo: https://github.com/gsi78eywh/OIBSIP\n" +
+                    "   • Workflow: AI-assisted coding & agent support\n" +
+                    "   • Official website: https://oasisinfobyte.com/";
             } else if (q.includes("project") || q.includes("work") || q.includes("built") || q.includes("portfolio")) {
                 reply = "Seth's featured projects include:\n\n" +
                     "1. Library Management System: Academic web platform with responsive catalog search, borrowing tracking, and real-time inventory.\n" +
@@ -592,4 +611,78 @@ function initCopyEmail() {
         }, 2200);
     }
 }
+
+/* --------------------------------------------------------------------------
+   8. SYSTEM UI PREVIEW MODAL LIGHTBOX
+   -------------------------------------------------------------------------- */
+function initPreviewModal() {
+    const modalBackdrop = document.getElementById("system-preview-modal");
+    if (!modalBackdrop) return;
+
+    const closeBtn = document.getElementById("modal-preview-close");
+    const dismissBtn = document.getElementById("modal-preview-dismiss");
+    const modalTitle = document.getElementById("modal-preview-title");
+    const modalSub = document.getElementById("modal-preview-sub");
+    const modalDesc = document.getElementById("modal-preview-desc");
+    const modalImg = document.getElementById("modal-preview-img");
+    const modalBadge = document.getElementById("modal-preview-badge");
+
+    const triggers = document.querySelectorAll('[data-open-preview="true"]');
+
+    function openModal(trigger) {
+        const title = trigger.getAttribute("data-preview-title");
+        const sub = trigger.getAttribute("data-preview-sub");
+        const desc = trigger.getAttribute("data-preview-desc");
+        const img = trigger.getAttribute("data-preview-img");
+        const badge = trigger.getAttribute("data-preview-badge");
+        const alt = trigger.getAttribute("data-preview-alt");
+
+        if (title && modalTitle) modalTitle.textContent = title;
+        if (sub && modalSub) modalSub.textContent = sub;
+        if (desc && modalDesc) modalDesc.textContent = desc;
+        if (img && modalImg) {
+            modalImg.src = img;
+            if (alt) modalImg.alt = alt;
+        }
+        if (badge && modalBadge) modalBadge.textContent = badge;
+
+        modalBackdrop.classList.add("is-active");
+        modalBackdrop.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal() {
+        modalBackdrop.classList.remove("is-active");
+        modalBackdrop.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal(trigger);
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+    if (dismissBtn) {
+        dismissBtn.addEventListener("click", closeModal);
+    }
+
+    modalBackdrop.addEventListener("click", (e) => {
+        if (e.target === modalBackdrop) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modalBackdrop.classList.contains("is-active")) {
+            closeModal();
+        }
+    });
+}
+
 

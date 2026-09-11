@@ -6,4 +6,6 @@ public sealed record PortfolioProject(
     string Description,
     IReadOnlyList<string> Technologies,
     string Status,
-    string? RepositoryUrl = null);
+    string? RepositoryUrl = null,
+    string? ImagePath = null,
+    string? ImageAlt = null);

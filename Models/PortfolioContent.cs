@@ -33,6 +33,27 @@ public sealed record ExperienceItem(
     string Period,
     string Description);
 
+public sealed record HandledProjectItem(
+    string Name,
+    string Role,
+    string Description,
+    string? Badge = null,
+    string? ProjectUrl = null,
+    string? ImagePath = null);
+
+public sealed record WorkExperienceItem(
+    string Company,
+    string CompanyUrl,
+    string Role,
+    string Duration,
+    string Period,
+    string Type,
+    string Summary,
+    IReadOnlyList<HandledProjectItem> ProjectsHandled,
+    IReadOnlyList<string> Technologies,
+    string? WorkflowSupport = null,
+    string? RepositoryUrl = null);
+
 public sealed record DailyQuote(
     string Text,
     string Author,

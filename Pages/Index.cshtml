@@ -11,8 +11,8 @@
         <div class="sidebar-inner">
             <div class="sidebar-top">
                 <div class="profile-card">
-                    <div class="avatar-frame">
-                        <img src="~/images/profile.jpg" asp-append-version="true" alt="Seth Andrey Jabagat - Software Developer" class="avatar-img" />
+                    <div class="avatar-frame" title="Seth Andrey Jabagat — Junior Software Developer">
+                        <img src="~/images/profile-corporate.jpg" asp-append-version="true" alt="Seth Andrey Jabagat - Professional Corporate Portrait" class="avatar-img" />
                     </div>
                     <div class="profile-meta">
                         <h1 class="profile-name">
@@ -24,10 +24,13 @@
                             </span>
                         </h1>
                         <p class="profile-location">
-                            <svg class="icon-pin" viewBox="0 0 24 24" fill="currentColor">
+                            <svg class="icon-pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
                             </svg>
-                            Dalaguete, Cebu, Philippines
+                            <a href="@Model.LocationMapUrl" target="_blank" rel="noreferrer" class="profile-location-link" title="View Tabon, Dalaguete, Cebu on Google Maps Street View">
+                                <span>Dalaguete, Cebu, Philippines</span>
+                                <span class="arrow-glyph">↗</span>
+                            </a>
                         </p>
                         <p class="profile-bio">
                             Junior Software Developer focused on Microsoft Power Platform, full-stack web development, and practical workflow automation.
@@ -46,18 +49,16 @@
                     </div>
                 </div>
 
-                <!-- Monospace 9-Item Numbered Navigation -->
+                <!-- Monospace 7-Item Numbered Navigation -->
                 <nav class="sidebar-nav" aria-label="Sections">
                     <ul class="nav-mono-list" id="sidebar-nav-list">
                         <li><a href="#about" class="nav-mono-link active" data-section="about"><span class="nav-num">01</span><span class="nav-sep">—</span><span class="nav-label">about</span><span class="nav-indicator"></span></a></li>
                         <li><a href="#experience" class="nav-mono-link" data-section="experience"><span class="nav-num">02</span><span class="nav-sep">—</span><span class="nav-label">experience</span><span class="nav-indicator"></span></a></li>
                         <li><a href="#projects" class="nav-mono-link" data-section="projects"><span class="nav-num">03</span><span class="nav-sep">—</span><span class="nav-label">projects</span><span class="nav-indicator"></span></a></li>
-                        <li><a href="#stack" class="nav-mono-link" data-section="stack"><span class="nav-num">04</span><span class="nav-sep">—</span><span class="nav-label">stack</span><span class="nav-indicator"></span></a></li>
-                        <li><a href="#certifications" class="nav-mono-link" data-section="certifications"><span class="nav-num">05</span><span class="nav-sep">—</span><span class="nav-label">certifications</span><span class="nav-indicator"></span></a></li>
-                        <li><a href="#recommendations" class="nav-mono-link" data-section="recommendations"><span class="nav-num">06</span><span class="nav-sep">—</span><span class="nav-label">recommendations</span><span class="nav-indicator"></span></a></li>
-                        <li><a href="#courses" class="nav-mono-link" data-section="courses"><span class="nav-num">07</span><span class="nav-sep">—</span><span class="nav-label">courses</span><span class="nav-indicator"></span></a></li>
-                        <li><a href="#answers" class="nav-mono-link" data-section="answers"><span class="nav-num">08</span><span class="nav-sep">—</span><span class="nav-label">book of answers</span><span class="nav-indicator"></span></a></li>
-                        <li><a href="#contact" class="nav-mono-link" data-section="contact"><span class="nav-num">09</span><span class="nav-sep">—</span><span class="nav-label">contact</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#credentials" class="nav-mono-link" data-section="credentials"><span class="nav-num">04</span><span class="nav-sep">—</span><span class="nav-label">credentials &amp; stack</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#education" class="nav-mono-link" data-section="education"><span class="nav-num">05</span><span class="nav-sep">—</span><span class="nav-label">education &amp; background</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#answers" class="nav-mono-link" data-section="answers"><span class="nav-num">06</span><span class="nav-sep">—</span><span class="nav-label">book of answers</span><span class="nav-indicator"></span></a></li>
+                        <li><a href="#contact" class="nav-mono-link" data-section="contact"><span class="nav-num">07</span><span class="nav-sep">—</span><span class="nav-label">contact</span><span class="nav-indicator"></span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -100,24 +101,24 @@
 
             <div class="hero-outlinks-row">
                 <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer" class="outlink-pill">
-                    <span>github</span> <span class="arrow-glyph">↗</span>
+                    <span>GitHub</span> <span class="arrow-glyph">↗</span>
                 </a>
                 <a href="https://www.linkedin.com/in/seth-andrey-abrasado-868419366/" target="_blank" rel="noreferrer" class="outlink-pill">
-                    <span>linkedin</span> <span class="arrow-glyph">↗</span>
+                    <span>LinkedIn</span> <span class="arrow-glyph">↗</span>
                 </a>
                 <a href="mailto:sethandreyabrasado@gmail.com" class="outlink-pill">
-                    <span>email</span> <span class="arrow-glyph">↗</span>
+                    <span>Email</span> <span class="arrow-glyph">↗</span>
                 </a>
                 <a href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer" class="outlink-pill">
-                    <span>teams</span> <span class="arrow-glyph">↗</span>
+                    <span>Teams</span> <span class="arrow-glyph">↗</span>
                 </a>
                 <a asp-page="/Resume" class="outlink-pill resume-pill">
-                    <span>résumé</span> <span class="arrow-glyph">↗</span>
+                    <span>Résumé</span> <span class="arrow-glyph">↗</span>
                 </a>
             </div>
         </section>
 
-        <!-- STAT METRICS GRID: 4 Horizontal Cards with Dynamic Project Count -->
+        <!-- STAT METRICS GRID: 4 Horizontal Cards with Impact-Driven Metrics -->
         <div class="metrics-grid" aria-label="Key Highlights">
             <article class="metric-card">
                 <div class="metric-top">
@@ -131,19 +132,19 @@
             <article class="metric-card">
                 <div class="metric-top">
                     <span class="metric-icon">🚀</span>
-                    <span class="metric-tag">SHIPPED &amp; DEPLOYED</span>
+                    <span class="metric-tag">DEPLOYED PLATFORMS</span>
                 </div>
-                <div class="metric-value">@Model.ShippedProjectsCount Projects</div>
-                <div class="metric-sub">@Model.RepositoriesCount public repos &amp; team solutions</div>
+                <div class="metric-value">Production Systems</div>
+                <div class="metric-sub">Enterprise, academic &amp; community solutions</div>
             </article>
 
             <article class="metric-card">
                 <div class="metric-top">
-                    <span class="metric-icon">&lt;/&gt;</span>
-                    <span class="metric-tag">CORE TECH STACK</span>
+                    <span class="metric-icon">⚡</span>
+                    <span class="metric-tag">WORKFLOW AUTOMATION</span>
                 </div>
-                <div class="metric-value">20+ Tech</div>
-                <div class="metric-sub">Power Platform, C#, Laravel, React</div>
+                <div class="metric-value">10+ Flows Automated</div>
+                <div class="metric-sub">Power Automate &amp; enterprise business logic</div>
             </article>
 
             <article class="metric-card">
@@ -160,19 +161,140 @@
         <section class="section-card" id="experience" aria-labelledby="experience-heading">
             <div class="card-meta-header">
                 <span class="section-code">02 // EXPERIENCE <span class="dot-accent">•</span></span>
-                <span class="location-tag">Track Record</span>
+                <span class="location-tag">Work &amp; Internships</span>
             </div>
-            <h3 class="section-subheading" id="experience-heading">Learning through real contribution &amp; delivery.</h3>
+            <h3 class="section-subheading" id="experience-heading">Hands-on software development, enterprise platforms &amp; practical delivery.</h3>
 
-            <div class="timeline-container">
-                @foreach (var exp in Model.Experience)
+            <div class="work-experience-stream">
+                @foreach (var workExp in Model.WorkExperience)
                 {
-                    <article class="timeline-card">
-                        <div class="timeline-period-badge">@exp.Period</div>
-                        <h4 class="timeline-role">@exp.Role</h4>
-                        <p class="timeline-desc">@exp.Description</p>
+                    <article class="work-experience-card">
+                        <div class="work-exp-top">
+                            <div class="work-exp-org-wrap">
+                                <div class="work-exp-icon">
+                                    <span>💼</span>
+                                </div>
+                                <div class="work-exp-org-info">
+                                    <h4 class="work-exp-company">
+                                        <a href="@workExp.CompanyUrl" target="_blank" rel="noreferrer" class="work-company-link" title="Visit @workExp.Company website">
+                                            <span>@workExp.Company</span>
+                                            <span class="arrow-glyph">↗</span>
+                                        </a>
+                                    </h4>
+                                    <div class="work-exp-role">@workExp.Role</div>
+                                </div>
+                            </div>
+                            <div class="work-exp-badges">
+                                <span class="work-badge duration-badge">@workExp.Duration</span>
+                                <span class="work-badge type-badge">@workExp.Type</span>
+                            </div>
+                        </div>
+
+                        <p class="work-exp-summary">@workExp.Summary</p>
+
+                        <!-- Projects Handled Sub-Grid -->
+                        <div class="work-projects-block">
+                            <div class="work-projects-header">
+                                <span class="work-projects-label">Projects Handled &amp; Responsibilities</span>
+                                <div class="work-projects-header-actions">
+                                    @if (!string.IsNullOrEmpty(workExp.RepositoryUrl))
+                                    {
+                                        <a href="@workExp.RepositoryUrl" target="_blank" rel="noreferrer" class="work-github-pill" title="View repository on GitHub">
+                                            <span>GitHub Repo</span>
+                                            <span class="arrow-glyph">↗</span>
+                                        </a>
+                                    }
+                                    <span class="work-projects-count">@workExp.ProjectsHandled.Count Projects</span>
+                                </div>
+                            </div>
+                            <div class="work-projects-grid">
+                                @foreach (var proj in workExp.ProjectsHandled)
+                                {
+                                    <div class="work-project-item">
+                                        <div class="work-project-item-head">
+                                            <span class="work-project-title">@proj.Name</span>
+                                            <div class="work-project-badges-wrap">
+                                                @if (!string.IsNullOrEmpty(proj.Badge))
+                                                {
+                                                    <span class="work-project-tag">@proj.Badge</span>
+                                                }
+                                                @if (!string.IsNullOrEmpty(proj.ProjectUrl))
+                                                {
+                                                    <a href="@proj.ProjectUrl" target="_blank" rel="noreferrer" class="work-project-code-link" title="View @proj.Name repository on GitHub">
+                                                        <span>Code</span>
+                                                        <span class="arrow-glyph">↗</span>
+                                                    </a>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="work-project-role-line">
+                                            <span class="role-bullet">▸</span> <span class="role-highlight">@proj.Role</span>
+                                        </div>
+                                        <p class="work-project-item-desc">@proj.Description</p>
+                                        @if (!string.IsNullOrEmpty(proj.ImagePath))
+                                        {
+                                            <button type="button" class="work-project-media-thumb" data-open-preview="true"
+                                                    data-preview-title="@proj.Name"
+                                                    data-preview-sub="Enterprise Workflow · Ramon Aboitiz Foundation Inc."
+                                                    data-preview-desc="@proj.Description"
+                                                    data-preview-img="@proj.ImagePath"
+                                                    data-preview-badge="RAFI Enterprise System"
+                                                    data-preview-alt="@proj.Name System Interface"
+                                                    aria-label="View system preview screenshot for @proj.Name">
+                                                <img src="@proj.ImagePath" alt="@proj.Name System Interface" class="work-project-thumb-img" loading="lazy" />
+                                                <span class="work-project-thumb-badge">🖼️ View System Preview ↗</span>
+                                            </button>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(workExp.WorkflowSupport))
+                        {
+                            <div class="work-ai-workflow-banner">
+                                <span class="ai-sparkle-icon">⚡</span>
+                                <span class="ai-workflow-text"><strong>Development Workflow:</strong> @workExp.WorkflowSupport</span>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(workExp.RepositoryUrl))
+                        {
+                            <div class="work-repo-bar">
+                                <a href="@workExp.RepositoryUrl" target="_blank" rel="noreferrer" class="work-repo-btn">
+                                    <span class="repo-icon">📂</span>
+                                    <span>View GitHub Repository (OIBSIP)</span>
+                                    <span class="arrow-glyph">↗</span>
+                                </a>
+                                <span class="work-repo-note">Includes Todo App, Stopwatch, Quiz App, and Unit Converter</span>
+                            </div>
+                        }
+
+                        <div class="work-exp-tech-tags">
+                            @foreach (var tech in workExp.Technologies)
+                            {
+                                <span class="tech-pill">@tech</span>
+                            }
+                        </div>
                     </article>
                 }
+            </div>
+
+            <!-- Additional Involvement & Extracurricular Activities -->
+            <div class="experience-extra-block">
+                <div class="experience-extra-title">
+                    <span>Community Involvement &amp; Learning Track</span>
+                </div>
+                <div class="timeline-container">
+                    @foreach (var exp in Model.Experience)
+                    {
+                        <article class="timeline-card">
+                            <div class="timeline-period-badge">@exp.Period</div>
+                            <h5 class="timeline-role">@exp.Role</h5>
+                            <p class="timeline-desc">@exp.Description</p>
+                        </article>
+                    }
+                </div>
             </div>
         </section>
 
@@ -189,153 +311,213 @@
                 {
                     var proj = Model.Projects[index];
                     <article class="project-box">
-                        <div class="project-box-header">
-                            <span class="project-idx">@((index + 1).ToString("00"))</span>
-                            <span class="project-badge status-@proj.Status.ToLower().Replace(" ", "-")">@proj.Status</span>
-                        </div>
-                        <div class="project-period-txt">@proj.Period</div>
-                        <h4 class="project-box-title">@proj.Title</h4>
-                        <p class="project-box-desc">@proj.Description</p>
-                        
-                        <div class="project-tags-list">
-                            @foreach (var tech in proj.Technologies)
-                            {
-                                <span class="tech-pill">@tech</span>
-                            }
+                        <div class="project-box-top">
+                            <div class="project-box-header">
+                                <span class="project-idx">@((index + 1).ToString("00"))</span>
+                                <span class="project-badge status-@proj.Status.ToLower().Replace(" ", "-")">@proj.Status</span>
+                            </div>
+                            <div class="project-period-txt">@proj.Period</div>
+                            <h4 class="project-box-title">@proj.Title</h4>
+                            <p class="project-box-desc">@proj.Description</p>
                         </div>
 
-                        <div class="project-box-footer">
-                            @if (!string.IsNullOrWhiteSpace(proj.RepositoryUrl))
-                            {
-                                <a href="@proj.RepositoryUrl" target="_blank" rel="noreferrer" class="project-code-link">
-                                    <span>View GitHub repository</span> <span class="arrow-glyph">↗</span>
-                                </a>
-                            }
-                            else
-                            {
-                                <span class="project-internal-tag">Enterprise / Internal Solution</span>
-                            }
+                        <div class="project-box-bottom">
+                            <div class="project-tags-list">
+                                @foreach (var tech in proj.Technologies)
+                                {
+                                    <span class="tech-pill">@tech</span>
+                                }
+                            </div>
+
+                            <div class="project-box-footer">
+                                @if (!string.IsNullOrWhiteSpace(proj.RepositoryUrl))
+                                {
+                                    <a href="@proj.RepositoryUrl" target="_blank" rel="noreferrer" class="project-code-link">
+                                        <span>View GitHub repository</span> <span class="arrow-glyph">↗</span>
+                                    </a>
+                                }
+                                else if (!string.IsNullOrWhiteSpace(proj.ImagePath))
+                                {
+                                    <button type="button" 
+                                            class="project-modal-trigger-btn" 
+                                            data-open-preview="true"
+                                            data-preview-title="@proj.Title"
+                                            data-preview-sub="@proj.Period"
+                                            data-preview-desc="@proj.Description"
+                                            data-preview-img="@proj.ImagePath"
+                                            data-preview-badge="RAFI Enterprise System"
+                                            data-preview-alt="@proj.ImageAlt"
+                                            aria-label="View UI preview screenshot for @proj.Title">
+                                        <span class="preview-btn-icon">🖼️</span>
+                                        <span>View System Preview</span>
+                                        <span class="preview-pill">Modal ↗</span>
+                                    </button>
+                                }
+                                else
+                                {
+                                    <span class="project-internal-tag">Enterprise / Internal Solution</span>
+                                }
+                            </div>
                         </div>
                     </article>
                 }
             </div>
         </section>
 
-        <!-- 04 // TECH STACK (Space-Saving Interactive Pills with Clickable % Display) -->
-        <section class="section-card" id="stack" aria-labelledby="stack-heading">
+        <!-- 04 // CREDENTIALS & STACK SECTION (Consolidated Tech Stack, Certifications & Coursework) -->
+        <section class="section-card" id="credentials" aria-labelledby="credentials-heading">
             <div class="card-meta-header">
-                <span class="section-code">04 // TECH STACK <span class="dot-accent">•</span></span>
-                <div class="stack-meta-tools">
-                    <span class="stack-action-hint">Click pill to reveal %</span>
-                    <button type="button" class="btn-toggle-all-pct" id="btn-toggle-all-pct" title="Toggle all percentages">
-                        <span class="pct-toggle-text">Show All %</span>
-                        <span class="pct-toggle-icon">⚡</span>
-                    </button>
-                </div>
+                <span class="section-code">04 // CREDENTIALS &amp; STACK <span class="dot-accent">•</span></span>
+                <span class="location-tag">Verified Skills &amp; Credentials</span>
             </div>
-            <h3 class="section-subheading" id="stack-heading">Core technical stack &amp; hands-on proficiency.</h3>
+            <h3 class="section-subheading" id="credentials-heading">Technical proficiency, verified certifications &amp; academic coursework.</h3>
 
-            <div class="tech-stack-pills-layout">
-                @foreach (var category in Model.RatedSkills)
-                {
-                    <div class="tech-category-group">
-                        <h4 class="tech-category-heading">@category.Category.ToUpperInvariant()</h4>
-                        <div class="tech-pills-row">
-                            @foreach (var skill in category.Skills)
-                            {
-                                <button type="button" 
-                                        class="tech-pill-btn" 
-                                        data-skill-name="@skill.Name"
-                                        data-skill-pct="@skill.Percentage"
-                                        data-skill-rating="@skill.Rating"
-                                        data-skill-level="@skill.Level"
-                                        data-skill-desc="@skill.Description"
-                                        title="@skill.Name: @skill.Percentage% (@skill.Rating/10) &bull; @skill.Level"
-                                        aria-label="@skill.Name @skill.Percentage% proficiency">
-                                    <span class="tech-pill-icon">
-                                        @await Html.PartialAsync("_SkillIcon", skill.IconKey)
-                                    </span>
-                                    <span class="tech-pill-label">@skill.Name</span>
-                                    <span class="tech-pill-pct-chip">@skill.Percentage%</span>
-                                </button>
-                            }
-                        </div>
+            <!-- Subblock 04.1: Core Technical Stack -->
+            <div class="credentials-subblock">
+                <div class="credentials-subblock-header">
+                    <div class="subblock-title-wrap">
+                        <span class="subblock-num">04.1</span>
+                        <h4 class="subblock-title">Core Technical Stack &amp; Proficiency</h4>
                     </div>
-                }
-            </div>
-
-            <!-- Active Skill Highlight Bar (Shown when pill clicked) -->
-            <div class="skill-detail-toast" id="skill-detail-toast" style="display: none;" aria-live="polite">
-                <div class="toast-left">
-                    <span class="toast-pct-badge" id="toast-pct-badge">90%</span>
-                    <div class="toast-meta">
-                        <div class="toast-title-row">
-                            <strong class="toast-name" id="toast-name">Power Apps</strong>
-                            <span class="toast-level" id="toast-level">Advanced (9/10)</span>
-                        </div>
-                        <p class="toast-desc" id="toast-desc">Custom Canvas &amp; Model-driven applications with responsive multi-screen UX</p>
+                    <div class="stack-meta-tools">
+                        <span class="stack-action-hint">Click pill to reveal %</span>
+                        <button type="button" class="btn-toggle-all-pct" id="btn-toggle-all-pct" title="Toggle all percentages">
+                            <span class="pct-toggle-text">Show All %</span>
+                            <span class="pct-toggle-icon">⚡</span>
+                        </button>
                     </div>
                 </div>
-                <div class="toast-track">
-                    <div class="toast-fill" id="toast-fill" style="width: 90%;"></div>
+
+                <div class="tech-stack-pills-layout">
+                    @foreach (var category in Model.RatedSkills)
+                    {
+                        <div class="tech-category-group">
+                            <h5 class="tech-category-heading">@category.Category.ToUpperInvariant()</h5>
+                            <div class="tech-pills-row">
+                                @foreach (var skill in category.Skills)
+                                {
+                                    <button type="button" 
+                                            class="tech-pill-btn" 
+                                            data-skill-name="@skill.Name"
+                                            data-skill-pct="@skill.Percentage"
+                                            data-skill-rating="@skill.Rating"
+                                            data-skill-level="@skill.Level"
+                                            data-skill-desc="@skill.Description"
+                                            title="@skill.Name: @skill.Percentage% (@skill.Rating/10) &bull; @skill.Level"
+                                            aria-label="@skill.Name @skill.Percentage% proficiency">
+                                        <span class="tech-pill-icon">
+                                            @await Html.PartialAsync("_SkillIcon", skill.IconKey)
+                                        </span>
+                                        <span class="tech-pill-label">@skill.Name</span>
+                                        <span class="tech-pill-pct-chip">@skill.Percentage%</span>
+                                    </button>
+                                }
+                            </div>
+                        </div>
+                    }
                 </div>
-                <button type="button" class="toast-close" id="toast-close" aria-label="Close detail">✕</button>
+
+                <!-- Active Skill Highlight Bar (Shown when pill clicked) -->
+                <div class="skill-detail-toast" id="skill-detail-toast" style="display: none;" aria-live="polite">
+                    <div class="toast-left">
+                        <span class="toast-pct-badge" id="toast-pct-badge">90%</span>
+                        <div class="toast-meta">
+                            <div class="toast-title-row">
+                                <strong class="toast-name" id="toast-name">Power Apps</strong>
+                                <span class="toast-level" id="toast-level">Advanced (9/10)</span>
+                            </div>
+                            <p class="toast-desc" id="toast-desc">Custom Canvas &amp; Model-driven applications with responsive multi-screen UX</p>
+                        </div>
+                    </div>
+                    <div class="toast-track">
+                        <div class="toast-fill" id="toast-fill" style="width: 90%;"></div>
+                    </div>
+                    <button type="button" class="toast-close" id="toast-close" aria-label="Close detail">✕</button>
+                </div>
+            </div>
+
+            <!-- Subblock 04.2: Verified Professional Certifications -->
+            <div class="credentials-subblock">
+                <div class="credentials-subblock-header">
+                    <div class="subblock-title-wrap">
+                        <span class="subblock-num">04.2</span>
+                        <h4 class="subblock-title">Verified Professional Certifications</h4>
+                    </div>
+                    <span class="subblock-badge">Industry Credentials</span>
+                </div>
+
+                <div class="certs-cards-grid">
+                    <div class="cert-feature-card">
+                        <div class="cert-card-top">
+                            <span class="cert-track">Python / Automation</span>
+                            <span class="cert-verified-icon">✓</span>
+                        </div>
+                        <h5 class="cert-card-title">Using Python to Interact with the Operating System</h5>
+                        <span class="cert-card-issuer">Google / Coursera</span>
+                    </div>
+
+                    <div class="cert-feature-card">
+                        <div class="cert-card-top">
+                            <span class="cert-track">Programming</span>
+                            <span class="cert-verified-icon">✓</span>
+                        </div>
+                        <h5 class="cert-card-title">Crash Course on Python</h5>
+                        <span class="cert-card-issuer">Google / Coursera</span>
+                    </div>
+
+                    <div class="cert-feature-card">
+                        <div class="cert-card-top">
+                            <span class="cert-track">Data Analytics</span>
+                            <span class="cert-verified-icon">✓</span>
+                        </div>
+                        <h5 class="cert-card-title">Google Data Analytics Professional Specialization</h5>
+                        <span class="cert-card-issuer">Google Career Certificates</span>
+                    </div>
+
+                    <div class="cert-feature-card">
+                        <div class="cert-card-top">
+                            <span class="cert-track">Design &amp; UI/UX</span>
+                            <span class="cert-verified-icon">✓</span>
+                        </div>
+                        <h5 class="cert-card-title">Google UI/UX Design Fundamentals</h5>
+                        <span class="cert-card-issuer">Google / Coursera</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subblock 04.3: Academic Coursework -->
+            <div class="credentials-subblock">
+                <div class="credentials-subblock-header">
+                    <div class="subblock-title-wrap">
+                        <span class="subblock-num">04.3</span>
+                        <h4 class="subblock-title">Academic Coursework (USJ-R)</h4>
+                    </div>
+                    <span class="subblock-badge">Core Curriculum</span>
+                </div>
+
+                <div class="courses-list-grid">
+                    @foreach (var course in Model.AcademicCourses)
+                    {
+                        <div class="course-list-item">
+                            <div class="course-idx-bullet">▸</div>
+                            <div class="course-body">
+                                <h5 class="course-name">@course.Title</h5>
+                                <span class="course-track-sub">@course.Category</span>
+                                <span class="course-tag">@course.Status</span>
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
         </section>
 
-        <!-- 05 // CERTIFICATIONS SECTION -->
-        <section class="section-card" id="certifications" aria-labelledby="certs-heading">
+        <!-- 05 // EDUCATION & BACKGROUND -->
+        <section class="section-card" id="education" aria-labelledby="education-heading">
             <div class="card-meta-header">
-                <span class="section-code">05 // CERTIFICATIONS <span class="dot-accent">•</span></span>
-                <span class="location-tag meta-action-link">Verified Credentials</span>
+                <span class="section-code">05 // EDUCATION &amp; BACKGROUND <span class="dot-accent">•</span></span>
+                <span class="location-tag">Academic Foundation</span>
             </div>
-
-            <div class="certs-cards-grid">
-                <div class="cert-feature-card">
-                    <div class="cert-card-top">
-                        <span class="cert-track">Python / Automation</span>
-                        <span class="cert-verified-icon">✓</span>
-                    </div>
-                    <h4 class="cert-card-title">Using Python to Interact with the Operating System</h4>
-                    <span class="cert-card-issuer">Google / Coursera</span>
-                </div>
-
-                <div class="cert-feature-card">
-                    <div class="cert-card-top">
-                        <span class="cert-track">Programming</span>
-                        <span class="cert-verified-icon">✓</span>
-                    </div>
-                    <h4 class="cert-card-title">Crash Course on Python</h4>
-                    <span class="cert-card-issuer">Google / Coursera</span>
-                </div>
-
-                <div class="cert-feature-card">
-                    <div class="cert-card-top">
-                        <span class="cert-track">Data Analytics</span>
-                        <span class="cert-verified-icon">✓</span>
-                    </div>
-                    <h4 class="cert-card-title">Google Data Analytics Professional Specialization</h4>
-                    <span class="cert-card-issuer">Google Career Certificates</span>
-                </div>
-
-                <div class="cert-feature-card">
-                    <div class="cert-card-top">
-                        <span class="cert-track">Design &amp; UI/UX</span>
-                        <span class="cert-verified-icon">✓</span>
-                    </div>
-                    <h4 class="cert-card-title">Google UI/UX Design Fundamentals</h4>
-                    <span class="cert-card-issuer">Google / Coursera</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 06 // RECOMMENDATIONS & EDUCATION -->
-        <section class="section-card" id="recommendations" aria-labelledby="rec-heading">
-            <div class="card-meta-header">
-                <span class="section-code">06 // RECOMMENDATIONS &amp; EDUCATION <span class="dot-accent">•</span></span>
-                <span class="location-tag">Academic Roots</span>
-            </div>
-            <h3 class="section-subheading" id="rec-heading">Academic foundation &amp; scholarship technology training.</h3>
+            <h3 class="section-subheading" id="education-heading">Formal degrees, technical scholarship training &amp; academic foundation.</h3>
 
             <div class="education-cards-grid">
                 @for (var index = 0; index < Model.Education.Count; index++)
@@ -356,33 +538,10 @@
             </div>
         </section>
 
-        <!-- 07 // ACADEMIC COURSEWORK SECTION -->
-        <section class="section-card" id="courses" aria-labelledby="courses-heading">
-            <div class="card-meta-header">
-                <span class="section-code">07 // ACADEMIC COURSEWORK <span class="dot-accent">•</span></span>
-                <span class="location-tag">USJ-R Curriculum</span>
-            </div>
-            <h3 class="section-subheading" id="courses-heading">Core computer technology coursework &amp; academic training.</h3>
-
-            <div class="courses-list-grid">
-                @foreach (var course in Model.AcademicCourses)
-                {
-                    <div class="course-list-item">
-                        <div class="course-idx-bullet">▸</div>
-                        <div class="course-body">
-                            <h4 class="course-name">@course.Title</h4>
-                            <span class="course-track-sub">@course.Category</span>
-                            <span class="course-tag">@course.Status</span>
-                        </div>
-                    </div>
-                }
-            </div>
-        </section>
-
-        <!-- 08 // BOOK OF ANSWERS & DAILY PERSPECTIVE -->
+        <!-- 06 // BOOK OF ANSWERS & DAILY PERSPECTIVE -->
         <section class="section-card" id="answers" aria-labelledby="answers-heading">
             <div class="card-meta-header">
-                <span class="section-code">08 // BOOK OF ANSWERS &amp; FAQS <span class="dot-accent">•</span></span>
+                <span class="section-code">06 // BOOK OF ANSWERS &amp; FAQS <span class="dot-accent">•</span></span>
                 <span class="location-tag">Philosophy &amp; Insights</span>
             </div>
             <h3 class="section-subheading" id="answers-heading">Daily perspective &amp; developer knowledge base.</h3>
@@ -431,11 +590,11 @@
             </div>
         </section>
 
-        <!-- 09 // CONTACT SECTION -->
+        <!-- 07 // CONTACT SECTION -->
         <section class="section-card contact-card" id="contact" aria-labelledby="contact-heading">
-            <!-- 09 // CONTACT SECTION (Compact, Proportional Buttons) -->
+            <!-- 07 // CONTACT SECTION (Compact, Proportional Buttons) -->
             <div class="card-meta-header">
-                <span class="section-code">09 // CONTACT <span class="dot-accent">•</span></span>
+                <span class="section-code">07 // CONTACT <span class="dot-accent">•</span></span>
                 <span class="location-tag">Get in Touch</span>
             </div>
             <h3 class="section-subheading" id="contact-heading">Let’s connect on opportunities and projects.</h3>
@@ -466,6 +625,7 @@
                 <a href="https://github.com/gsi78eywh" target="_blank" rel="noreferrer" class="channel-link">GitHub ↗</a>
                 <a href="https://www.linkedin.com/in/seth-andrey-abrasado-868419366/" target="_blank" rel="noreferrer" class="channel-link">LinkedIn ↗</a>
                 <a href="mailto:sethandreyabrasado@gmail.com" class="channel-link">Email ↗</a>
+                <a href="@Model.MicrosoftTeamsChatUrl" target="_blank" rel="noreferrer" class="channel-link">Teams ↗</a>
                 <a asp-page="/Resume" class="channel-link">Full Résumé ↗</a>
             </div>
         </section>
@@ -615,5 +775,49 @@
                 </svg>
             </button>
         </form>
+    </div>
+</div>
+
+<!-- SYSTEM UI PREVIEW MODAL (High-Definition Interactive Lightbox) -->
+<div class="system-preview-modal-backdrop" id="system-preview-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-preview-title">
+    <div class="system-preview-modal-card">
+        <div class="modal-card-header">
+            <div class="modal-title-wrap">
+                <span class="modal-kicker-badge" id="modal-preview-badge">RAFI Enterprise System</span>
+                <h3 class="modal-preview-title" id="modal-preview-title">Activity Proposal System</h3>
+                <span class="modal-preview-sub" id="modal-preview-sub">Enterprise Workflow · Ramon Aboitiz Foundation Inc.</span>
+            </div>
+            <button type="button" class="modal-close-btn" id="modal-preview-close" aria-label="Close preview modal">✕</button>
+        </div>
+
+        <div class="modal-preview-body">
+            <div class="modal-preview-media-wrap">
+                <img src="~/images/projects/activity-proposal.png" id="modal-preview-img" alt="Activity Proposal System Interface" class="modal-preview-img" />
+                <div class="modal-media-caption-bar">
+                    <span class="modal-caption-badge">Production System UI</span>
+                    <span class="modal-caption-note">Authenticated Access &amp; Workflow Form</span>
+                </div>
+            </div>
+
+            <div class="modal-preview-details">
+                <h4 class="modal-details-heading">System Overview &amp; Architecture</h4>
+                <p class="modal-details-desc" id="modal-preview-desc">
+                    Enterprise workflow automating budget requests, organizational proposal compliance, multi-tier approvals, and financial audits for Ramon Aboitiz Foundation Inc.
+                </p>
+                <div class="modal-details-tags">
+                    <span class="tech-pill">Power Apps</span>
+                    <span class="tech-pill">Power Automate</span>
+                    <span class="tech-pill">SharePoint Lists</span>
+                    <span class="tech-pill">Multi-Tier Approvals</span>
+                    <span class="tech-pill">Audit Trail</span>
+                    <span class="tech-pill">Internal Solution</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-card-footer">
+            <span class="modal-esc-hint">Press <kbd>Esc</kbd> or click outside to dismiss</span>
+            <button type="button" class="modal-dismiss-btn" id="modal-preview-dismiss">Close Preview</button>
+        </div>
     </div>
 </div>

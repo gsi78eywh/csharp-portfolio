@@ -8,6 +8,8 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
 {
     public string Name { get; } = "Seth Andrey Jabagat";
     public string Location { get; } = "Dalaguete, Cebu, Philippines";
+    public string LocationMapUrl { get; } =
+        "https://www.google.com/maps/place/Tabon+Basketball+Court/@9.7981585,123.4582484,3a,75y,108.54h,73.58t/data=!3m7!1e1!3m5!1sGzEBHVwtvuhXC13VygCQRQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D16.420519482182442%26panoid%3DGzEBHVwtvuhXC13VygCQRQ%26yaw%3D108.5382099495906!7i16384!8i8192!4m6!3m5!1s0x33abbfdcddb94675:0xbe784992ef73d705!8m2!3d9.7872168!4d123.4482756!16s%2Fg%2F11g_jg31y?entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D";
     public string Role { get; } = "Junior Software Developer | Microsoft Power Platform & Web";
     public string MicrosoftTeamsChatUrl { get; } =
         "https://teams.microsoft.com/l/chat/0/0?users=sethandreyabrasado@gmail.com&message=Hi%20Seth%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.";
@@ -132,9 +134,12 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
         new(
             "Activity Proposal System",
             "Enterprise Workflow · Microsoft Power Platform",
-            "Microsoft Power Platform enterprise workflow automating budget requests, organizational proposal compliance, multi-tier approvals, and financial audits.",
-            ["Power Apps", "Power Automate", "Reporting"],
-            "Power Platform"),
+            "Microsoft Power Platform enterprise workflow automating budget requests, organizational proposal compliance, multi-tier approvals, and financial audits for Ramon Aboitiz Foundation Inc.",
+            ["Power Apps", "Power Automate", "SharePoint", "Reporting"],
+            "Power Platform",
+            null,
+            "/images/projects/activity-proposal.png",
+            "Activity Proposal System login interface at Ramon Aboitiz Foundation Inc."),
         new(
             "REACH System — Relief Automated Messaging",
             "Disaster Relief Platform · React & SMS Automation",
@@ -144,12 +149,83 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
             "https://github.com/gsi78eywh/REACH-v4")
     ];
 
-    public IReadOnlyList<ExperienceItem> Experience { get; } =
+    public IReadOnlyList<WorkExperienceItem> WorkExperience { get; } =
     [
         new(
-            "Industry Learning — Accenture & AI Talks",
-            "January – February 2026",
-            "Studied practical AI, cloud infrastructure, and enterprise technology trends through technical talks, case examples, and Q&A sessions."),
+            "Ramon Aboitiz Foundation Inc.",
+            "https://rafi.org.ph/",
+            "Software Developer — Microsoft Platforms Developer",
+            "6 Months",
+            "Internship · 6 Months",
+            "Internship",
+            "Served as Software Developer focusing on Microsoft Power Platform, custom enterprise applications, workflow automations, and backend developer support across foundation initiatives.",
+            [
+                new(
+                    "Seat Booking App",
+                    "Full-Stack / Power Platform Developer",
+                    "Developed an internal hot-desking and office seat reservation application utilizing Power Apps, automated booking validation via Power Automate, and SharePoint list data architecture to streamline on-site workspace allocation.",
+                    "Internal Solution"),
+                new(
+                    "Activity Proposal System",
+                    "Backend Developer Support",
+                    "Delivered backend logic, validation checks, and multi-tier approval routing to handle organization-wide event budgets, organizational proposal compliance, and audit requirements.",
+                    "Enterprise Workflow",
+                    null,
+                    "/images/projects/activity-proposal.png"),
+                new(
+                    "VPIN Platform",
+                    "Developer Support",
+                    "Assisted in technical maintenance, feature support, and system integration for the foundation's VPIN initiative.",
+                    "Foundation Initiative"),
+                new(
+                    "User Manual & Documentation",
+                    "Technical Enablement Support",
+                    "Authored comprehensive end-user manuals and step-by-step procedural guides to ensure smooth onboarding, operational adherence, and system adoption.",
+                    "Documentation")
+            ],
+            ["Power Apps", "Power Automate", "SharePoint", "Full-Stack", "Backend Support", "Microsoft 365", "Technical Writing"]),
+
+        new(
+            "Oasis Infobyte",
+            "https://oasisinfobyte.com/",
+            "Application Developer Intern",
+            "1 Month",
+            "Internship · 1 Month",
+            "Internship",
+            "Built and shipped core mobile and interactive software utilities, focusing on clean software architecture, responsive UI components, persistent data storage, and AI-accelerated delivery.",
+            [
+                new(
+                    "Todo App",
+                    "Android & Mobile Developer",
+                    "Task management and productivity application featuring task scheduling, dynamic status updates, and local database persistence.",
+                    "Mobile App",
+                    "https://github.com/gsi78eywh/OIBSIP"),
+                new(
+                    "Stopwatch",
+                    "Application Developer",
+                    "High-precision timer utility with responsive start/pause/lap recording controls and smooth millisecond tick rendering.",
+                    "Mobile Utility",
+                    "https://github.com/gsi78eywh/OIBSIP"),
+                new(
+                    "Quiz App",
+                    "Application Developer",
+                    "Interactive assessment application featuring category-based question sets, dynamic countdown timers, and immediate scoring metrics.",
+                    "Interactive App",
+                    "https://github.com/gsi78eywh/OIBSIP"),
+                new(
+                    "Unit Converter",
+                    "Application Developer",
+                    "Multi-category conversion platform supporting weight, length, temperature, and currency with real-time reactive calculation.",
+                    "Utility Tool",
+                    "https://github.com/gsi78eywh/OIBSIP")
+            ],
+            ["Java", "Android Studio", "XML", "Supabase", "SQLite", "JavaScript", "Mobile UI/UX"],
+            "AI-Assisted Coding & Agent Support (Accelerated prototyping, prompt engineering, and code quality workflows)",
+            "https://github.com/gsi78eywh/OIBSIP")
+    ];
+
+    public IReadOnlyList<ExperienceItem> Experience { get; } =
+    [
         new(
             "Youth Empowerment Participant",
             "January 2025 – Present",
@@ -157,7 +233,11 @@ public class IndexModel(IDailyQuoteService dailyQuoteService) : PageModel
         new(
             "Alliance Student Developer",
             "August – December 2025",
-            "Collaborated on low-code applications, workflow improvements, and rapid prototypes that became functional team solutions.")
+            "Collaborated on low-code applications, workflow improvements, and rapid prototypes that became functional team solutions."),
+        new(
+            "Industry Learning — Accenture & AI Talks",
+            "January – February 2026",
+            "Studied practical AI, cloud infrastructure, and enterprise technology trends through technical talks, case examples, and Q&A sessions.")
     ];
 
     public async Task OnGetAsync(CancellationToken cancellationToken)
