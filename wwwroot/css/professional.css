@@ -223,25 +223,62 @@ button, input {
     box-shadow: var(--shadow-subtle);
     margin-bottom: 10px;
     position: relative;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.avatar-frame:hover {
+.avatar-frame:hover,
+.avatar-frame:focus-visible,
+.avatar-frame.is-hovered {
     border-color: var(--border-accent);
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.09);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+}
+
+.avatar-frame:focus-visible {
+    outline: 2px solid var(--accent-pure);
+    outline-offset: 2px;
 }
 
 .avatar-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%;
     display: block;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
-.avatar-frame:hover .avatar-img {
-    transform: scale(1.04);
+.avatar-default {
+    position: relative;
+    z-index: 1;
+    object-position: center 20%;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.avatar-hover {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    object-position: center 60%;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.06);
+}
+
+.avatar-frame:hover .avatar-default,
+.avatar-frame:focus-visible .avatar-default,
+.avatar-frame.is-hovered .avatar-default {
+    opacity: 0;
+    transform: scale(1.06);
+}
+
+.avatar-frame:hover .avatar-hover,
+.avatar-frame:focus-visible .avatar-hover,
+.avatar-frame.is-hovered .avatar-hover {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .profile-meta {
@@ -2460,22 +2497,6 @@ button, input {
     color: var(--accent-blue);
     font-size: 9px;
     flex-shrink: 0;
-}
-
-.ai-drawer-shortcut-hint {
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    color: var(--text-muted);
-    padding: 2px 0;
-}
-
-.ai-drawer-shortcut-hint kbd {
-    background: #e2e8f0;
-    border: 1px solid #cbd5e1;
-    color: var(--accent-blue-dark);
-    padding: 1px 4px;
-    border-radius: 4px;
 }
 
 /* ==========================================================================

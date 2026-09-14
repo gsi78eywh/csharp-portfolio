@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTechPills();
     initCopyEmail();
     initPreviewModal();
+    initAvatarHover();
 });
 
 /* --------------------------------------------------------------------------
@@ -684,5 +685,32 @@ function initPreviewModal() {
         }
     });
 }
+
+/* --------------------------------------------------------------------------
+   9. INTERACTIVE AVATAR HOVER & TOUCH TOGGLE
+   -------------------------------------------------------------------------- */
+function initAvatarHover() {
+    const avatarFrame = document.querySelector(".avatar-frame");
+    if (!avatarFrame) return;
+
+    // Toggle on click/tap for touchscreen devices
+    avatarFrame.addEventListener("click", () => {
+        avatarFrame.classList.toggle("is-hovered");
+    });
+
+    // Keyboard support: Enter / Space toggle
+    avatarFrame.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            avatarFrame.classList.toggle("is-hovered");
+        }
+    });
+
+    // Reset when mouse leaves
+    avatarFrame.addEventListener("mouseleave", () => {
+        avatarFrame.classList.remove("is-hovered");
+    });
+}
+
 
 
